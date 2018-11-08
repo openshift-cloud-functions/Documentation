@@ -69,7 +69,18 @@ Placeholder for dependencies.
 
 ## Creating Subscriptions
 
-On accessing the console, you will see **Operators** as an option in the left panel.
-You can create Subscriptions for the available Operators by accessing the **Subscriptions** option under **Operators**.
+On accessing the console, you will see **Operators** as a tab in the left panel.
+You can create Subscriptions for the available Operators by accessing the **Subscriptions** tab under **Operators**.
 
 ![Subscriptions in the left panel](images/subs.png "Logo Title Text 1")
+
+1. To create a new Subscription, select the **Create Subscription** button in the **Subscriptions** tab, or go directly to the **Package Manifests** tab.
+2. Select the Knative Operator you wish to create a Subscription for, and select **Create Subscription**.
+
+   ![Knative operators](images/ops-for-subs.png "Logo Title Text 1")  
+
+3. You will be able to see and edit the configuration of the Subscription being created before you finalize this.
+
+   For more information about Subscription configurations, see the [OLM documentation](https://github.com/operator-framework/operator-lifecycle-manager#discovery-catalogs-and-automated-upgrades).  
+
+   ![Subscription configuration](images/sub-config.png "Logo Title Text 1")  
