@@ -25,8 +25,8 @@ Introduction information.
 You must install the following dependencies before installing OCF on Minishift.
 
 - [Minishift](https://docs.okd.io/latest/minishift/getting-started/installing.html)
-- [Operator Lifecycle Manager (OLM)](https://github.com/operator-framework/operator-lifecycle-manager/blob/master/Documentation/install/install.md#install-the-latest-release-version-of-olm-for-okd).
-- [OLM user interface](https://github.com/operator-framework/operator-lifecycle-manager#user-interface).
+- [Operator Lifecycle Manager (OLM)](https://github.com/operator-framework/operator-lifecycle-manager/blob/master/Documentation/install/install.md#install-the-latest-release-version-of-olm-for-okd)
+- [OLM user interface](https://github.com/operator-framework/operator-lifecycle-manager#user-interface)
 
 #### OpenShift Origin (OKD)
 Placeholder for dependencies.
@@ -40,7 +40,7 @@ Placeholder for dependencies.
 
 1. Start Minishift..
 
-   `start minishift`  
+   `minishift start`  
 
 2. Set the required environment variables.
 
@@ -59,6 +59,8 @@ Placeholder for dependencies.
 
    `oc adm policy add-cluster-role-to-user cluster-admin system:serviceaccount:kube-system:default`
 
-6. Check your IP address by typing `minishift ip` in the terminal. Use this IP address with port 9000 appended to access the console from your web browser.
+6. Start up the [OLM user interface](https://github.com/operator-framework/operator-lifecycle-manager#user-interface).
+
+7. Check your IP address by typing `minishift ip` in the terminal. Use this IP address with port 9000 appended to access the console from your web browser.
 
    `http://127.0.0.0:9000`
