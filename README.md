@@ -38,7 +38,7 @@ Placeholder for dependencies.
 
 ### Installing OCF on Minishift
 
-1. Start Minishift..
+1. Start Minishift.
 
    `minishift start`  
 
@@ -72,4 +72,4 @@ Placeholder for dependencies.
 On accessing the console, you will see **Operators** as an option in the left panel.
 You can create Subscriptions for the available Operators by accessing the **Subscriptions** option under **Operators**.
 
-![Subscriptions in the left panel](../images/subs.png "Logo Title Text 1")
+![Subscriptions in the left panel](images/subs.png "Logo Title Text 1")
