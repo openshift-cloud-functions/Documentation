@@ -2,14 +2,14 @@
 Developer Preview 0.2.0
 ------
 
-The functionality introduced by OCF is developer preview only. Red Hat supported is not provided, and OCF should not be used in a production environment.
+> **IMPORTANT:** The functionality introduced by OCF is developer preview only. Red Hat supported is not provided, and OCF should not be used in a production environment.
 
 ## About OpenShift Cloud Functions
 Introduction information.
 
 ## Prerequisites
 
-> **NOTE:** You will need cluster administrator privileges to install and use OCF.
+> **IMPORTANT:** You will need cluster administrator privileges to install and use OCF.
 
 ### Supported platform versions
 
@@ -56,7 +56,7 @@ Placeholder for dependencies.
 
    `oc apply -f https://raw.githubusercontent.com/openshift-cloud-functions/knative-operators/master/knative-operators.catalogsource.yaml`  
 
-#### Accessing the console (user interface)
+## Accessing the console (user interface)
 
 1. Start up the [OLM user interface](https://github.com/operator-framework/operator-lifecycle-manager#user-interface).
 
@@ -84,8 +84,9 @@ You can create Subscriptions for the available Operators by accessing the **Subs
 
 ![Subscriptions in the left panel](images/subs.png "Logo Title Text 1")
 
-> **NOTE:** Before you create Subscriptions, you must first select the correct project (namespace) from the **Project** drop-down menu.
-> ![Selecting the correct project (namespace)](images/namespaces.png "Logo Title Text 1")
+> **IMPORTANT:** Before you create Subscriptions, you must first select the correct project (namespace) from the **Project** drop-down menu.
+
+   ![Selecting the correct project (namespace)](images/namespaces.png "Logo Title Text 1")  
 
 1. To create a new Subscription, select the **Create Subscription** button in the **Subscriptions** tab, or go directly to the **Package Manifests** tab.
 2. Select the Knative Operator you wish to create a Subscription for, and select **Create Subscription**.
