@@ -88,7 +88,7 @@ You can create Subscriptions for the available Operators by accessing the **Subs
 
    ![Selecting the correct project (namespace)](images/namespaces.png "Logo Title Text 1")  
 
-1. To create a new Subscription, select the **Create Subscription** button in the **Subscriptions** tab, or go directly to the **Package Manifests** tab.
+1. To create a new Subscription, select the **Create Subscription** button in the **Package Manifests** tab.
 2. Select the Knative Operator you wish to create a Subscription for, and select **Create Subscription**.
 
    ![Knative operators](images/ops-for-subs.png "Logo Title Text 1")  
@@ -98,3 +98,11 @@ You can create Subscriptions for the available Operators by accessing the **Subs
    For more information about Subscription configurations, see the [OLM documentation](https://github.com/operator-framework/operator-lifecycle-manager#discovery-catalogs-and-automated-upgrades).  
 
    ![Subscription configuration](images/sub-config.png "Logo Title Text 1")  
+
+4. The Subscription will now be created. Once this process is complete, you will see a the Subscription information in the **Subscriptions** tab.
+
+   ![Subscription creation complete](images/confirmation.png "Subscriptions tab")  
+
+5. You can verify the setup by checking that the pods are running for each project by going to the **Workloads** > **Pods** tab.
+
+   ![Pods running verification](images/pods.png "Pods tab")  
