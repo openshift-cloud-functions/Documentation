@@ -4,9 +4,6 @@ Developer Preview 0.2.0
 
 > **IMPORTANT:** The functionality introduced by OCF is developer preview only. Red Hat supported is not provided, and OCF should not be used in a production environment.
 
-## About OpenShift Cloud Functions
-Introduction information.
-
 ## Prerequisites
 
 > **IMPORTANT:** You will need cluster administrator privileges to install and use OCF.
@@ -56,7 +53,7 @@ Placeholder for dependencies.
 
    `oc apply -f https://raw.githubusercontent.com/openshift-cloud-functions/knative-operators/master/knative-operators.catalogsource.yaml`  
 
-## Accessing the console (user interface)
+## Accessing the OCF console (user interface)
 
 1. Start up the [OLM user interface](https://github.com/operator-framework/operator-lifecycle-manager#user-interface).
 
@@ -64,7 +61,8 @@ Placeholder for dependencies.
 
    `http://127.0.0.1:9000`
 
-## Creating required Knative namespaces (projects)
+## Installing Knative Operators on Minishift using OLM
+### Creating required Knative namespaces (projects)
 
 Namespaces are created automatically in an OKD or Minishift 3.11 cluster when using the `oc new-project` command.
 
@@ -77,7 +75,7 @@ To use the Knative operators, you must create the following projects (and, by de
 | knative-eventing   | knative-eventing  | `oc new-project knative-eventing`  |
 
 
-## Creating Subscriptions
+### Creating Subscriptions
 
 On accessing the console, you will see **Operators** as a tab in the left panel.
 You can create Subscriptions for the available Operators by accessing the **Subscriptions** tab under **Operators**.
