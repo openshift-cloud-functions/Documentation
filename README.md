@@ -2,6 +2,23 @@
 Developer Preview 0.2.0
 ------
 
+<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
+
+- [OpenShift Cloud Functions (OCF)](#openshift-cloud-functions-ocf)
+	- [Prerequisites](#prerequisites)
+		- [Supported platform versions](#supported-platform-versions)
+	- [Installing OCF](#installing-ocf)
+		- [Installing dependencies](#installing-dependencies)
+		- [Installing OCF on Minishift](#installing-ocf-on-minishift)
+	- [Accessing the OCF console (user interface)](#accessing-the-ocf-console-user-interface)
+	- [Installing Knative Operators on Minishift using OLM](#installing-knative-operators-on-minishift-using-olm)
+		- [Creating Subscriptions](#creating-subscriptions)
+			- [Knative build](#knative-build)
+			- [Knative serving](#knative-serving)
+			- [Knative eventing](#knative-eventing)
+
+<!-- /TOC -->
+
 > **IMPORTANT:** The functionality introduced by OCF is developer preview only. Red Hat supported is not provided, and OCF should not be used in a production environment.
 
 ## Prerequisites
@@ -88,8 +105,8 @@ You can create Subscriptions for the available Operators by accessing the **Subs
 
 3. Update the Security Context Constraints (SCC) by adding the required service account to the `anyuid` and `privileged` SCCs in the `knative-build` namespace.
 
-   `oc adm policy add-scc-to-user anyuid -z default`
-   `oc adm policy add-scc-to-user privileged -z default`
+   `oc adm policy add-scc-to-user anyuid -z default`  
+   `oc adm policy add-scc-to-user privileged -z default`  
 
 4. In the console, the `knative-build` project from the drop-down menu.
 5. To create a new Subscription, select the **Create Subscription** button in the **Package Manifests** tab.
@@ -123,8 +140,8 @@ You can create Subscriptions for the available Operators by accessing the **Subs
 
 3. Update the Security Context Constraints (SCC) by adding the required service account to the `anyuid` and `privileged` SCCs in the `knative-serving` namespace.
 
-   `oc adm policy add-scc-to-user anyuid -z default`
-   `oc adm policy add-scc-to-user privileged -z default`
+   `oc adm policy add-scc-to-user anyuid -z default`  
+   `oc adm policy add-scc-to-user privileged -z default`  
 
 4. Select the `knative-serving` project from the drop-down menu.
 5. To create a new Subscription, select the **Create Subscription** button in the **Package Manifests** tab.
@@ -158,8 +175,8 @@ You can create Subscriptions for the available Operators by accessing the **Subs
 
 3. Update the Security Context Constraints (SCC) by adding the required service account to the `anyuid` and `privileged` SCCs in the `knative-eventing` namespace.
 
-   `oc adm policy add-scc-to-user anyuid -z default`
-   `oc adm policy add-scc-to-user privileged -z default`
+   `oc adm policy add-scc-to-user anyuid -z default`  
+   `oc adm policy add-scc-to-user privileged -z default`  
 
 2. Select the `knative-eventing` project from the drop-down menu.
 3. To create a new Subscription, select the **Create Subscription** button in the **Package Manifests** tab.
