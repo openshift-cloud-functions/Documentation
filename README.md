@@ -54,9 +54,14 @@ You must install the following dependencies before installing OCF on Minishift.
 
 ## Accessing the OCF console (user interface)
 
-1. Start up the [OLM user interface](https://github.com/operator-framework/operator-lifecycle-manager#user-interface).
+1. Open a new terminal window and set the required environment variables.
 
-2. Check your IP address by typing `minishift ip` in the terminal. Use this IP address with port 9000 appended to access the console from your web browser.
+   `eval $(minishift oc-env)`  
+   `eval $(minishift docker-env)`
+
+2. Start up the [OLM user interface](https://github.com/operator-framework/operator-lifecycle-manager#user-interface).
+
+3. Check your IP address by typing `minishift ip` in the terminal. Use this IP address with port 9000 appended to access the console from your web browser.
 
    `http://127.0.0.1:9000`
 
@@ -73,61 +78,88 @@ You can create Subscriptions for the available Operators by accessing the **Subs
 
 #### Knative build
 
-1. Use the following command in the terminal to create the `knative-build` project and namespace.
+1. In the terminal, use the following command to create the `knative-build` project and namespace.
 
    `oc new-project knative-build`  
 
-2. Select the `knative-build` project from the drop-down menu.
-3. To create a new Subscription, select the **Create Subscription** button in the **Package Manifests** tab.
-4. Select `knative-build` from the list of Operators, then select **Create Subscription**.
+2. Ensure that you are in the `knative-build` namespace.
+
+   `oc project knative-build`  
+
+3. Update the Security Context Constraints (SCC) by adding the required service account to the `anyuid` and `privileged` SCCs in the `knative-build` namespace.
+
+   `oc adm policy add-scc-to-user anyuid -z default`
+   `oc adm policy add-scc-to-user privileged -z default`
+
+4. In the console, the `knative-build` project from the drop-down menu.
+5. To create a new Subscription, select the **Create Subscription** button in the **Package Manifests** tab.
+6. Select `knative-build` from the list of Operators, then select **Create Subscription**.
 
    ![Knative operators](images/ops-for-subs.png "Logo Title Text 1")  
 
-5. You will be able to see and edit the configuration of the Subscription being created before you finalize this.
+7. You will be able to see and edit the configuration of the Subscription being created before you finalize this.
 
    For more information about Subscription configurations, see the [OLM documentation](https://github.com/operator-framework/operator-lifecycle-manager#discovery-catalogs-and-automated-upgrades).  
 
    ![Subscription configuration](images/sub-config-build.png "Logo Title Text 1")  
 
-6. The Subscription will now be created. Once this process is complete, you will see the Subscription information in the **Subscriptions** tab.
+8. The Subscription will now be created. Once this process is complete, you will see the Subscription information in the **Subscriptions** tab.
 
    ![Subscription creation complete](images/confirmation-build.png "Subscriptions tab")  
 
-7. You can verify the setup by checking that the pods are running by going to the **Workloads** > **Pods** tab.
+9. You can verify the setup by checking that the pods are running by going to the **Workloads** > **Pods** tab.
 
    ![Pods running verification](images/pods-build.png "Pods tab")  
 
 #### Knative serving
 
-1. Use the following command in the terminal to create the `knative-serving` project and namespace.
+1. In the terminal, use the following command to create the `knative-serving` project and namespace.
 
    `oc new-project knative-serving`  
 
-2. Select the `knative-serving` project from the drop-down menu.
-3. To create a new Subscription, select the **Create Subscription** button in the **Package Manifests** tab.
-4. Select `knative-serving` from the list of Operators, then select **Create Subscription**.
+2. Ensure that you are in the `knative-serving` namespace.
+
+   `oc project knative-serving`  
+
+3. Update the Security Context Constraints (SCC) by adding the required service account to the `anyuid` and `privileged` SCCs in the `knative-serving` namespace.
+
+   `oc adm policy add-scc-to-user anyuid -z default`
+   `oc adm policy add-scc-to-user privileged -z default`
+
+4. Select the `knative-serving` project from the drop-down menu.
+5. To create a new Subscription, select the **Create Subscription** button in the **Package Manifests** tab.
+6. Select `knative-serving` from the list of Operators, then select **Create Subscription**.
 
    ![Knative operators](images/ops-for-subs.png "Logo Title Text 1")  
 
-5. You will be able to see and edit the configuration of the Subscription being created before you finalize this.
+7. You will be able to see and edit the configuration of the Subscription being created before you finalize this.
 
    For more information about Subscription configurations, see the [OLM documentation](https://github.com/operator-framework/operator-lifecycle-manager#discovery-catalogs-and-automated-upgrades).  
 
    ![Subscription configuration](images/sub-config-serving.png "Logo Title Text 1")  
 
-6. The Subscription will now be created. Once this process is complete, you will see the Subscription information in the **Subscriptions** tab.
+8. The Subscription will now be created. Once this process is complete, you will see the Subscription information in the **Subscriptions** tab.
 
    ![Subscription creation complete](images/confirmation-serving.png "Subscriptions tab")  
 
-7. You can verify the setup by checking that the pods are running by going to the **Workloads** > **Pods** tab.
+9. You can verify the setup by checking that the pods are running by going to the **Workloads** > **Pods** tab.
 
    ![Pods running verification](images/pods-serving.png "Pods tab")  
 
 #### Knative eventing
 
-1. Use the following command in the terminal to create the `knative-eventing` project and namespace.
+1. In the terminal, use the following command to create the `knative-eventing` project and namespace.
 
    `oc new-project knative-eventing`  
+
+2. Ensure that you are in the `knative-eventing` namespace.
+
+   `oc project knative-eventing`  
+
+3. Update the Security Context Constraints (SCC) by adding the required service account to the `anyuid` and `privileged` SCCs in the `knative-eventing` namespace.
+
+   `oc adm policy add-scc-to-user anyuid -z default`
+   `oc adm policy add-scc-to-user privileged -z default`
 
 2. Select the `knative-eventing` project from the drop-down menu.
 3. To create a new Subscription, select the **Create Subscription** button in the **Package Manifests** tab.
