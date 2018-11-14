@@ -115,8 +115,6 @@ You must install the following dependencies before installing OCF on Minishift.
 
 7. The Subscription will now be created. Once this process is complete, you will see the Subscription information in the **Subscriptions** tab.
 
-   ![Subscription creation complete](images/confirmation-build.png "Subscriptions tab")  
-
 8. You can verify the setup by checking that the pods are running by going to the **Workloads** > **Pods** tab.
 
    ![Pods running verification](images/pods-build.png "Pods tab")  
@@ -152,8 +150,6 @@ You must install the following dependencies before installing OCF on Minishift.
 
 7. he Subscription will now be created. Once this process is complete, you will see the Subscription information in the **Subscriptions** tab.
 
-   ![Subscription creation complete](images/confirmation-serving.png "Subscriptions tab")  
-
 8. You can verify the setup by checking that the pods are running by going to the **Workloads** > **Pods** tab.
 
    ![Pods running verification](images/pods-serving.png "Pods tab")  
@@ -188,8 +184,6 @@ You must install the following dependencies before installing OCF on Minishift.
    ![Subscription configuration](images/sub-config-eventing.png "Logo Title Text 1")  
 
 7. The Subscription will now be created. Once this process is complete, you will see the Subscription information in the **Subscriptions** tab.
-
-   ![Subscription creation complete](images/confirmation-eventing.png "Subscriptions tab")  
 
 8. You can verify the setup by checking that the pods are running by going to the **Workloads** > **Pods** tab.
 
