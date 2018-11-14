@@ -2,6 +2,8 @@
 Developer Preview 0.2.0
 ------
 
+> **IMPORTANT:** The functionality introduced by OCF is developer preview only. Red Hat supported is not provided, and OCF should not be used in a production environment.
+
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
 - [OpenShift Cloud Functions (OCF)](#openshift-cloud-functions-ocf)
@@ -12,14 +14,11 @@ Developer Preview 0.2.0
 		- [Installing OCF on Minishift](#installing-ocf-on-minishift)
 	- [Accessing the OCF console (user interface)](#accessing-the-ocf-console-user-interface)
 	- [Installing Knative Operators on Minishift using OLM](#installing-knative-operators-on-minishift-using-olm)
-		- [Creating Subscriptions](#creating-subscriptions)
-			- [Knative build](#knative-build)
-			- [Knative serving](#knative-serving)
-			- [Knative eventing](#knative-eventing)
+		- [Knative build](#knative-build)
+		- [Knative serving](#knative-serving)
+		- [Knative eventing](#knative-eventing)
 
 <!-- /TOC -->
-
-> **IMPORTANT:** The functionality introduced by OCF is developer preview only. Red Hat supported is not provided, and OCF should not be used in a production environment.
 
 ## Prerequisites
 
@@ -85,15 +84,7 @@ You must install the following dependencies before installing OCF on Minishift.
 
 ## Installing Knative Operators on Minishift using OLM
 
-### Creating Subscriptions
-
-On accessing the console, you will see **Operators** as a tab in the left panel.
-You can create Subscriptions for the available Operators by accessing the **Subscriptions** tab under **Operators**.
-![Subscriptions in the left panel](images/subs.png "Logo Title Text 1")
-
-> **IMPORTANT:** Before you create Subscriptions, you must first select the correct project (namespace) from the **Project** drop-down menu.
-
-#### Knative build
+### Knative build
 
 1. In the terminal, use the following command to create the `knative-build` project and namespace.
 
@@ -109,26 +100,28 @@ You can create Subscriptions for the available Operators by accessing the **Subs
    `oc adm policy add-scc-to-user privileged -z default`  
 
 4. In the console, the `knative-build` project from the drop-down menu.
-5. To create a new Subscription, select the **Create Subscription** button in the **Package Manifests** tab.
-6. Select `knative-build` from the list of Operators, then select **Create Subscription**.
+
+   ![Select knative-build project](images/build-proj.png)  
+
+5. Create a new Subscription, by selecting the **Create Subscription** button for the `knative-build` Operator in the **Package Manifests** tab.
 
    ![Knative operators](images/ops-for-subs.png "Logo Title Text 1")  
 
-7. You will be able to see and edit the configuration of the Subscription being created before you finalize this.
+6. You will be able to see and edit the configuration of the Subscription being created before you finalize this.
 
    For more information about Subscription configurations, see the [OLM documentation](https://github.com/operator-framework/operator-lifecycle-manager#discovery-catalogs-and-automated-upgrades).  
 
    ![Subscription configuration](images/sub-config-build.png "Logo Title Text 1")  
 
-8. The Subscription will now be created. Once this process is complete, you will see the Subscription information in the **Subscriptions** tab.
+7. The Subscription will now be created. Once this process is complete, you will see the Subscription information in the **Subscriptions** tab.
 
    ![Subscription creation complete](images/confirmation-build.png "Subscriptions tab")  
 
-9. You can verify the setup by checking that the pods are running by going to the **Workloads** > **Pods** tab.
+8. You can verify the setup by checking that the pods are running by going to the **Workloads** > **Pods** tab.
 
    ![Pods running verification](images/pods-build.png "Pods tab")  
 
-#### Knative serving
+### Knative serving
 
 1. In the terminal, use the following command to create the `knative-serving` project and namespace.
 
@@ -144,26 +137,28 @@ You can create Subscriptions for the available Operators by accessing the **Subs
    `oc adm policy add-scc-to-user privileged -z default`  
 
 4. Select the `knative-serving` project from the drop-down menu.
-5. To create a new Subscription, select the **Create Subscription** button in the **Package Manifests** tab.
-6. Select `knative-serving` from the list of Operators, then select **Create Subscription**.
+
+   ![Select knative-serving project](images/serving-proj.png)   
+
+5. Create a new Subscription, by selecting the **Create Subscription** button for the `knative-serving` Operator in the **Package Manifests** tab.
 
    ![Knative operators](images/ops-for-subs.png "Logo Title Text 1")  
 
-7. You will be able to see and edit the configuration of the Subscription being created before you finalize this.
+6. You will be able to see and edit the configuration of the Subscription being created before you finalize this.
 
    For more information about Subscription configurations, see the [OLM documentation](https://github.com/operator-framework/operator-lifecycle-manager#discovery-catalogs-and-automated-upgrades).  
 
    ![Subscription configuration](images/sub-config-serving.png "Logo Title Text 1")  
 
-8. The Subscription will now be created. Once this process is complete, you will see the Subscription information in the **Subscriptions** tab.
+7. he Subscription will now be created. Once this process is complete, you will see the Subscription information in the **Subscriptions** tab.
 
    ![Subscription creation complete](images/confirmation-serving.png "Subscriptions tab")  
 
-9. You can verify the setup by checking that the pods are running by going to the **Workloads** > **Pods** tab.
+8. You can verify the setup by checking that the pods are running by going to the **Workloads** > **Pods** tab.
 
    ![Pods running verification](images/pods-serving.png "Pods tab")  
 
-#### Knative eventing
+### Knative eventing
 
 1. In the terminal, use the following command to create the `knative-eventing` project and namespace.
 
@@ -178,22 +173,24 @@ You can create Subscriptions for the available Operators by accessing the **Subs
    `oc adm policy add-scc-to-user anyuid -z default`  
    `oc adm policy add-scc-to-user privileged -z default`  
 
-2. Select the `knative-eventing` project from the drop-down menu.
-3. To create a new Subscription, select the **Create Subscription** button in the **Package Manifests** tab.
-4. Select `knative-eventing` from the list of Operators, then select **Create Subscription**.
+4. Select the `knative-eventing` project from the drop-down menu.
+
+   ![Select knative-eventing project](images/eventing-proj.png)  
+
+5. Create a new Subscription, by selecting the **Create Subscription** button for the `knative-eventing` Operator in the **Package Manifests** tab.
 
    ![Knative operators](images/ops-for-subs.png "Logo Title Text 1")  
 
-5. You will be able to see and edit the configuration of the Subscription being created before you finalize this.
+6. You will be able to see and edit the configuration of the Subscription being created before you finalize this.
 
    For more information about Subscription configurations, see the [OLM documentation](https://github.com/operator-framework/operator-lifecycle-manager#discovery-catalogs-and-automated-upgrades).  
 
    ![Subscription configuration](images/sub-config-eventing.png "Logo Title Text 1")  
 
-6. The Subscription will now be created. Once this process is complete, you will see the Subscription information in the **Subscriptions** tab.
+7. The Subscription will now be created. Once this process is complete, you will see the Subscription information in the **Subscriptions** tab.
 
    ![Subscription creation complete](images/confirmation-eventing.png "Subscriptions tab")  
 
-7. You can verify the setup by checking that the pods are running by going to the **Workloads** > **Pods** tab.
+8. You can verify the setup by checking that the pods are running by going to the **Workloads** > **Pods** tab.
 
    ![Pods running verification](images/pods-eventing.png "Pods tab")  
