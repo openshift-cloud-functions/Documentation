@@ -30,9 +30,6 @@ Developer Preview 0.2.0
 | ------------- |:-------------:|
 | Minishift      | 1.25.0 or newer |
 
-
-## Installing OCF
-
 ### Installing dependencies
 
 You must install the following dependencies before installing OCF on Minishift.
@@ -50,7 +47,7 @@ You must install the following dependencies before installing OCF on Minishift.
 >
 > For more information, see the [Minishift configuration documentation](https://docs.okd.io/latest/minishift/command-ref/minishift_config.html).
 
-### Installing OCF on Minishift
+## Installing OCF on Minishift
 
 1. Start Minishift.
 
