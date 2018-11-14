@@ -40,6 +40,7 @@ You must install the following dependencies before installing OCF on Minishift.
 - [Minishift](https://docs.okd.io/latest/minishift/getting-started/installing.html)
 - [Operator Lifecycle Manager (OLM)](https://github.com/operator-framework/operator-lifecycle-manager/blob/master/Documentation/install/install.md#install-the-latest-release-version-of-olm-for-okd)
 - [OLM user interface](https://github.com/operator-framework/operator-lifecycle-manager#user-interface)
+- [Istio add-on for Minishift](https://github.com/minishift/minishift-addons/tree/master/add-ons/istio#istio-add-on)
 
 > **NOTE:** You will need to set the correct hardware configuration for the virtual machine before starting Minishift. You can do this by using the commands
 >
@@ -94,30 +95,23 @@ You must install the following dependencies before installing OCF on Minishift.
 
    `oc project knative-build`  
 
-3. Update the Security Context Constraints (SCC) by adding the required service account to the `anyuid` and `privileged` SCCs in the `knative-build` namespace.
-
-   `oc adm policy add-scc-to-user anyuid -z default`  
-   `oc adm policy add-scc-to-user privileged -z default`  
-
-4. In the console, the `knative-build` project from the drop-down menu.
+3. In the console, the `knative-build` project from the drop-down menu.
 
    ![Select knative-build project](images/build-proj.png)  
 
-5. Create a new Subscription, by selecting the **Create Subscription** button for the `knative-build` Operator in the **Package Manifests** tab.
+4. Create a new Subscription, by selecting the **Create Subscription** button for the `knative-build` Operator in the **Package Manifests** tab.
 
    ![Knative operators](images/ops-for-subs.png "Logo Title Text 1")  
 
-6. You will be able to see and edit the configuration of the Subscription being created before you finalize this.
+5. You will be able to see and edit the configuration of the Subscription being created before you finalize this.
 
    For more information about Subscription configurations, see the [OLM documentation](https://github.com/operator-framework/operator-lifecycle-manager#discovery-catalogs-and-automated-upgrades).  
 
    ![Subscription configuration](images/sub-config-build.png "Logo Title Text 1")  
 
-7. The Subscription will now be created. Once this process is complete, you will see the Subscription information in the **Subscriptions** tab.
+6. The Subscription will now be created. Once this process is complete, you will see the Subscription information in the **Subscriptions** tab.
 
-8. You can verify the setup by checking that the pods are running by going to the **Workloads** > **Pods** tab.
-
-   ![Pods running verification](images/pods-build.png "Pods tab")  
+7. You can verify the setup by checking that the pods are running by going to the **Workloads** > **Pods** tab.
 
 ### Knative serving
 
@@ -129,30 +123,23 @@ You must install the following dependencies before installing OCF on Minishift.
 
    `oc project knative-serving`  
 
-3. Update the Security Context Constraints (SCC) by adding the required service account to the `anyuid` and `privileged` SCCs in the `knative-serving` namespace.
-
-   `oc adm policy add-scc-to-user anyuid -z default`  
-   `oc adm policy add-scc-to-user privileged -z default`  
-
-4. Select the `knative-serving` project from the drop-down menu.
+3. Select the `knative-serving` project from the drop-down menu.
 
    ![Select knative-serving project](images/serving-proj.png)   
 
-5. Create a new Subscription, by selecting the **Create Subscription** button for the `knative-serving` Operator in the **Package Manifests** tab.
+4. Create a new Subscription, by selecting the **Create Subscription** button for the `knative-serving` Operator in the **Package Manifests** tab.
 
    ![Knative operators](images/ops-for-subs.png "Logo Title Text 1")  
 
-6. You will be able to see and edit the configuration of the Subscription being created before you finalize this.
+5. You will be able to see and edit the configuration of the Subscription being created before you finalize this.
 
    For more information about Subscription configurations, see the [OLM documentation](https://github.com/operator-framework/operator-lifecycle-manager#discovery-catalogs-and-automated-upgrades).  
 
    ![Subscription configuration](images/sub-config-serving.png "Logo Title Text 1")  
 
-7. he Subscription will now be created. Once this process is complete, you will see the Subscription information in the **Subscriptions** tab.
+6. he Subscription will now be created. Once this process is complete, you will see the Subscription information in the **Subscriptions** tab.
 
-8. You can verify the setup by checking that the pods are running by going to the **Workloads** > **Pods** tab.
-
-   ![Pods running verification](images/pods-serving.png "Pods tab")  
+7. You can verify the setup by checking that the pods are running by going to the **Workloads** > **Pods** tab.
 
 ### Knative eventing
 
@@ -164,27 +151,20 @@ You must install the following dependencies before installing OCF on Minishift.
 
    `oc project knative-eventing`  
 
-3. Update the Security Context Constraints (SCC) by adding the required service account to the `anyuid` and `privileged` SCCs in the `knative-eventing` namespace.
-
-   `oc adm policy add-scc-to-user anyuid -z default`  
-   `oc adm policy add-scc-to-user privileged -z default`  
-
-4. Select the `knative-eventing` project from the drop-down menu.
+3. Select the `knative-eventing` project from the drop-down menu.
 
    ![Select knative-eventing project](images/eventing-proj.png)  
 
-5. Create a new Subscription, by selecting the **Create Subscription** button for the `knative-eventing` Operator in the **Package Manifests** tab.
+4. Create a new Subscription, by selecting the **Create Subscription** button for the `knative-eventing` Operator in the **Package Manifests** tab.
 
    ![Knative operators](images/ops-for-subs.png "Logo Title Text 1")  
 
-6. You will be able to see and edit the configuration of the Subscription being created before you finalize this.
+5. You will be able to see and edit the configuration of the Subscription being created before you finalize this.
 
    For more information about Subscription configurations, see the [OLM documentation](https://github.com/operator-framework/operator-lifecycle-manager#discovery-catalogs-and-automated-upgrades).  
 
    ![Subscription configuration](images/sub-config-eventing.png "Logo Title Text 1")  
 
-7. The Subscription will now be created. Once this process is complete, you will see the Subscription information in the **Subscriptions** tab.
+6. The Subscription will now be created. Once this process is complete, you will see the Subscription information in the **Subscriptions** tab.
 
-8. You can verify the setup by checking that the pods are running by going to the **Workloads** > **Pods** tab.
-
-   ![Pods running verification](images/pods-eventing.png "Pods tab")  
+7. You can verify the setup by checking that the pods are running by going to the **Workloads** > **Pods** tab.
