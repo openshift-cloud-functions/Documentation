@@ -65,9 +65,9 @@ You must install the following dependencies before installing OCF on Minishift.
    `eval $(minishift oc-env)`  
    `eval $(minishift docker-env)`  
 
-3. Navigate to the `knative-operators` directory and run the script
+3. Navigate to the `knative-operators/etc/` directory and run the script
 
-   `prep-knative.sh`  
+   `./scripts/prep-knative.sh`  
 
 3. Login as administrator.
 
