@@ -9,9 +9,8 @@ Developer Preview 0.2.0
 - [OpenShift Cloud Functions (OCF)](#openshift-cloud-functions-ocf)
 	- [Prerequisites](#prerequisites)
 		- [Supported platform versions](#supported-platform-versions)
-	- [Installing OCF](#installing-ocf)
 		- [Installing dependencies](#installing-dependencies)
-		- [Installing OCF on Minishift](#installing-ocf-on-minishift)
+	- [Installing OCF on Minishift](#installing-ocf-on-minishift)
 	- [Accessing the OCF console (user interface)](#accessing-the-ocf-console-user-interface)
 	- [Installing Knative Operators on Minishift using OLM](#installing-knative-operators-on-minishift-using-olm)
 		- [Knative build](#knative-build)
@@ -39,13 +38,21 @@ You must install the following dependencies before installing OCF on Minishift.
 - [OLM user interface](https://github.com/operator-framework/operator-lifecycle-manager#user-interface)
 - [Istio add-on for Minishift](https://github.com/minishift/minishift-addons/tree/master/add-ons/istio#istio-add-on)
 
-> **NOTE:** You will need to set the correct hardware configuration for the virtual machine before starting Minishift. You can do this by using the commands
+> **NOTE:** You will need to set the correct configuration before starting Minishift. You can do this by using the commands
 >
->   `minishift config set memory 8GB (2)`  
->
->    `minishift config set cpus 4 (3)`  
+> `minishift profile set knative
+> minishift config set openshift-version v3.11.0
+> minishift config set memory 8GB
+> minishift config set cpus 4
+> minishift config set disk-size 50g
+> minishift config set image-caching true
+> minishift addons enable admin-user
+> minishift addons enable anyuid`  
 >
 > For more information, see the [Minishift configuration documentation](https://docs.okd.io/latest/minishift/command-ref/minishift_config.html).
+
+> **NOTE:** If this is not your first installation, and you wish to remove your Minishift profile and reinstall OCF, you can do this using the command
+> `minishift profile delete knative --force`
 
 ## Installing OCF on Minishift
 
@@ -57,6 +64,10 @@ You must install the following dependencies before installing OCF on Minishift.
 
    `eval $(minishift oc-env)`  
    `eval $(minishift docker-env)`  
+
+3. Navigate to the `knative-operators` directory and run the script
+
+   `prep-knative.sh`  
 
 3. Login as administrator.
 
