@@ -40,14 +40,14 @@ You must install the following dependencies before installing OCF on Minishift.
 
 > **NOTE:** You will need to set the correct configuration before starting Minishift. You can do this by using the commands
 >
-> `minishift profile set knative
-> minishift config set openshift-version v3.11.0
-> minishift config set memory 8GB
-> minishift config set cpus 4
-> minishift config set disk-size 50g
-> minishift config set image-caching true
-> minishift addons enable admin-user
-> minishift addons enable anyuid`  
+>   `minishift profile set knative`  
+>   `minishift config set openshift-version v3.11.0`  
+>   `minishift config set memory 8GB`  
+>   `minishift config set cpus 4`  
+>   `minishift config set disk-size 50g`  
+>   `minishift config set image-caching true`  
+>   `minishift addons enable admin-user`  
+>   `minishift addons enable anyuid`  
 >
 > For more information, see the [Minishift configuration documentation](https://docs.okd.io/latest/minishift/command-ref/minishift_config.html).
 
