@@ -37,22 +37,7 @@ All of the developer preview components of OpenShift Cloud Functions, including 
 
 ### Prerequisites
 
-> **IMPORTANT:** You will need cluster administrator pri<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
-
-- [OpenShift Cloud Functions (OCF)](#openshift-cloud-functions-ocf)
-	- [Installing OCF via the script provided](#installing-ocf-via-the-script-provided)
-	- [Installing OCF manually](#installing-ocf-manually)
-		- [Prerequisites](#prerequisites)
-			- [Supported platform versions](#supported-platform-versions)
-			- [Installing dependencies](#installing-dependencies)
-		- [Installing OCF on Minishift](#installing-ocf-on-minishift)
-		- [Accessing the OCF console (user interface)](#accessing-the-ocf-console-user-interface)
-		- [Installing Knative Operators on Minishift using OLM](#installing-knative-operators-on-minishift-using-olm)
-			- [Knative build](#knative-build)
-			- [Knative serving](#knative-serving)
-			- [Knative eventing](#knative-eventing)
-
-<!-- /TOC -->vileges to install and use OCF.
+> **IMPORTANT:** You will need cluster administrator privileges to install and use OCF.
 
 #### Supported platform versions
 
