@@ -19,17 +19,31 @@ Developer Preview 0.2.0
 
 <!-- /TOC -->
 
-## Prerequisites
+All of the developer preview components of OpenShift Cloud Functions, including software dependencies, can be installed by using the script provided by Red Hat in the OpenShift Cloud Functions `knative-operators` repository.
+
+## Installing OCF via the script provided
+
+1. Clone the `knative-operators` repository.
+
+   `git clone git@github.com:openshift-cloud-functions/knative-operators.git`  
+
+2. Navigate to the newly cloned repository and run the `install.sh` script.
+
+   `./etc/scripts/install.sh`  
+
+## Installing OCF manually
+
+### Prerequisites
 
 > **IMPORTANT:** You will need cluster administrator privileges to install and use OCF.
 
-### Supported platform versions
+#### Supported platform versions
 
 | Platform        | Supported versions           |
 | ------------- |:-------------:|
 | Minishift      | 1.25.0 or newer |
 
-### Installing dependencies
+#### Installing dependencies
 
 You must install the following dependencies before installing OCF on Minishift.
 
@@ -54,7 +68,7 @@ You must install the following dependencies before installing OCF on Minishift.
 > **NOTE:** If this is not your first installation, and you wish to remove your Minishift profile and reinstall OCF, you can do this using the command
 > `minishift profile delete knative --force`
 
-## Installing OCF on Minishift
+### Installing OCF on Minishift
 
 1. Start Minishift.
 
@@ -77,7 +91,7 @@ You must install the following dependencies before installing OCF on Minishift.
 
    `oc apply -f https://raw.githubusercontent.com/openshift-cloud-functions/knative-operators/master/knative-operators.catalogsource.yaml`  
 
-## Accessing the OCF console (user interface)
+### Accessing the OCF console (user interface)
 
 1. Open a new terminal window and set the required environment variables.
 
@@ -91,9 +105,9 @@ You must install the following dependencies before installing OCF on Minishift.
    `http://127.0.0.1:9000`
 
 
-## Installing Knative Operators on Minishift using OLM
+### Installing Knative Operators on Minishift using OLM
 
-### Knative build
+#### Knative build
 
 1. In the terminal, use the following command to create the `knative-build` project and namespace.
 
@@ -121,7 +135,7 @@ You must install the following dependencies before installing OCF on Minishift.
 
 7. You can verify the setup by checking that the pods are running by going to the **Workloads** > **Pods** tab.
 
-### Knative serving
+#### Knative serving
 
 1. In the terminal, use the following command to create the `knative-serving` project and namespace.
 
@@ -149,7 +163,7 @@ You must install the following dependencies before installing OCF on Minishift.
 
 7. You can verify the setup by checking that the pods are running by going to the **Workloads** > **Pods** tab.
 
-### Knative eventing
+#### Knative eventing
 
 1. In the terminal, use the following command to create the `knative-eventing` project and namespace.
 
