@@ -21,7 +21,7 @@ Developer Preview 0.2.0
 
 <!-- /TOC -->
 
-All of the developer preview components of OpenShift Cloud Functions, including software dependencies, can be installed by using the script provided by Red Hat in the OpenShift Cloud Functions `knative-operators` repository.
+> **NOTE ON INSTALLATION:** All of the developer preview components of OpenShift Cloud Functions, including software dependencies and configurations, can be installed by using the script provided by Red Hat in the OpenShift Cloud Functions `knative-operators` repository. The steps for manual installation are also included in this document to provide information about the steps completed by running the script, however the script installation method is recommended.
 
 ## Installing OCF via the script provided (recommended)
 
