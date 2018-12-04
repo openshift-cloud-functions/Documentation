@@ -23,6 +23,20 @@ Developer Preview 0.2.0
 
 > **NOTE ON INSTALLATION:** All of the developer preview components of OpenShift Cloud Functions, including software dependencies and configurations, can be installed by using the script provided by Red Hat in the OpenShift Cloud Functions `knative-operators` repository. The steps for manual installation are also included in this document to provide information about the steps completed by running the script, however the script installation method is recommended.
 
+## Prerequisites
+
+> **IMPORTANT:** You will need cluster administrator privileges to install and use OCF.
+
+### Supported platform versions
+
+| Platform        | Supported versions           |
+| ------------- |:-------------:|
+| Minishift      | 1.25.0 or newer |
+
+### Hardware requirements
+
+OCF on Minishift requires at least 24GB of memory to run correctly.
+
 ## Installing OCF via the script provided (recommended)
 
 1. Clone the `knative-operators` repository.
@@ -35,17 +49,7 @@ Developer Preview 0.2.0
 
 ## Installing OCF manually
 
-### Prerequisites
-
-> **IMPORTANT:** You will need cluster administrator privileges to install and use OCF.
-
-#### Supported platform versions
-
-| Platform        | Supported versions           |
-| ------------- |:-------------:|
-| Minishift      | 1.25.0 or newer |
-
-#### Installing dependencies
+### Installing dependencies
 
 You must install the following dependencies before installing OCF on Minishift.
 
