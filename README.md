@@ -7,11 +7,12 @@ Developer Preview 0.2.0
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
 - [OpenShift Cloud Functions (OCF)](#openshift-cloud-functions-ocf)
+	- [Prerequisites](#prerequisites)
+		- [Supported platform versions](#supported-platform-versions)
+		- [Hardware requirements](#hardware-requirements)
 	- [Installing OCF via the script provided (recommended)](#installing-ocf-via-the-script-provided-recommended)
 	- [Installing OCF manually](#installing-ocf-manually)
-		- [Prerequisites](#prerequisites)
-			- [Supported platform versions](#supported-platform-versions)
-			- [Installing dependencies](#installing-dependencies)
+		- [Installing dependencies](#installing-dependencies)
 		- [Installing OCF on Minishift](#installing-ocf-on-minishift)
 		- [Accessing the OCF console (user interface)](#accessing-the-ocf-console-user-interface)
 		- [Installing Knative Operators on Minishift using OLM](#installing-knative-operators-on-minishift-using-olm)
