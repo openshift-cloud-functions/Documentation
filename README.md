@@ -12,11 +12,11 @@ Developer Preview 0.2.0
 		- [Hardware requirements](#hardware-requirements)
 		- [Installing dependencies](#installing-dependencies)
 			- [Installing Minishift](#installing-minishift)
-			- [Installing [Operator Lifecycle Manager (OLM)](https://github.com/operator-framework/operator-lifecycle-manager/blob/master/Documentation/install/install.md#install-the-latest-release-version-of-olm-for-okd)](#installing-operator-lifecycle-manager-olmhttpsgithubcomoperator-frameworkoperator-lifecycle-managerblobmasterdocumentationinstallinstallmdinstall-the-latest-release-version-of-olm-for-okd)
-			- [Installing [OLM user interface](https://github.com/operator-framework/operator-lifecycle-manager#user-interface)](#installing-olm-user-interfacehttpsgithubcomoperator-frameworkoperator-lifecycle-manageruser-interface)
-			- [Installing [Istio add-on for Minishift](https://github.com/minishift/minishift-addons/tree/master/add-ons/istio#istio-add-on)](#installing-istio-add-on-for-minishifthttpsgithubcomminishiftminishift-addonstreemasteradd-onsistioistio-add-on)
 	- [Installing OCF via the script provided (recommended)](#installing-ocf-via-the-script-provided-recommended)
+		- [Accessing the OCF console (user interface)](#accessing-the-ocf-console-user-interface)
 	- [Installing OCF manually](#installing-ocf-manually)
+		- [Installing Operator Lifecycle Manager (OLM)](#installing-operator-lifecycle-manager-olm)
+		- [Installing [Istio add-on for Minishift](https://github.com/minishift/minishift-addons/tree/master/add-ons/istio#istio-add-on)](#installing-istio-add-on-for-minishifthttpsgithubcomminishiftminishift-addonstreemasteradd-onsistioistio-add-on)
 		- [Installing OCF on Minishift](#installing-ocf-on-minishift)
 		- [Accessing the OCF console (user interface)](#accessing-the-ocf-console-user-interface)
 		- [Installing Knative Operators on Minishift using OLM](#installing-knative-operators-on-minishift-using-olm)
@@ -42,86 +42,139 @@ Developer Preview 0.2.0
 
 OCF on Minishift requires at least 24GB of memory to run correctly.
 
+If you are running Minishift on your local machine, ensure that virtualization is enabled, as this installation required the use of virtual machines (KVM).
+
 ### Installing dependencies
 
-You must install the following dependencies before installing OCF.
+> **IMPORTANT:** Docker and Kubernetes are also required to install and use OCF, however these components are outside the scope of this documentation, and instructions can be found easily online.
 
 #### Installing Minishift
 
 > **NOTE:** If this is not your first installation, and you wish to remove your Minishift profile and reinstall OCF, you can do this using the command
-> `minishift profile delete knative --force`
+>
+>   `$ minishift profile delete knative --force`  
 
-1. Download the latest version of Minishift from the [Minishift Releases page]()
-2. Extract the files
+1. Download the latest version of Minishift from the [Minishift Releases page](https://github.com/minishift/minishift/releases)
+2. Extract the files.
 
-   Example command:  
-
-   `tar xvzf minishift-1.28.0-linux-amd64.tgz`  
+   Example command for RHEL:   
+   `$ sudo tar xvzf minishift-1.28.0-linux-amd64.tgz`  
 
 3. Add the minishift binary to your PATH environment variable.
 
-   Example command:  
+   Example command for RHEL:  
+   `$ sudo cp minishift-1.28.0-linux-amd64/minishift /bin`  
 
-   `cp minishift-1.28.0-linux-amd64/minishift /bin`  
+4. Install `libvirt` and `qemu-kvm` on your system.
 
-4. You will need to set the correct configuration before starting Minishift. You can do this by using the commands
+   Example commands for RHEL:
 
-   `minishift profile set knative`  
-	 `minishift config set openshift-version v3.11.0`  
-	 `minishift config set memory 8GB`  
-	 `minishift config set cpus 4`  
-	 `minishift config set disk-size 50g`  
-	 `minishift config set image-caching true`  
-	 `minishift addons enable admin-user`  
-	 `minishift addons enable anyuid`
+	 `$ sudo yum install libvirt qemu-kvm`  
+	 `$ sudo usermod -a -G libvirt <username>`  
+	 `$ newgrp libvirt`  
+	 `$ sudo curl -L https://github.com/dhiltgen/docker-machine-kvm/releases/download/v0.10.0/docker-machine-driver-kvm-centos7 -o /usr/local/bin/docker-machine-driver-kvm`  
+	 `$ sudo chmod +x /usr/local/bin/docker-machine-driver-kvm`
 
-#### Installing [Operator Lifecycle Manager (OLM)](https://github.com/operator-framework/operator-lifecycle-manager/blob/master/Documentation/install/install.md#install-the-latest-release-version-of-olm-for-okd)
-#### Installing [OLM user interface](https://github.com/operator-framework/operator-lifecycle-manager#user-interface)
-#### Installing [Istio add-on for Minishift](https://github.com/minishift/minishift-addons/tree/master/add-ons/istio#istio-add-on)
+5. You will need to set the correct configuration before starting Minishift. You can do this by using the commands
+
+   `$ minishift profile set knative`  
+	 `$ minishift config set openshift-version v3.11.0`  
+	 `$ minishift config set memory 8GB`  
+	 `$ minishift config set cpus 4`  
+	 `$ minishift config set disk-size 50g`  
+	 `$ minishift config set image-caching true`  
+	 `$ minishift addons enable admin-user`  
+	 `$ minishift addons enable anyuid`  
 
 ## Installing OCF via the script provided (recommended)
 
 1. Clone the `knative-operators` repository.
 
-   `git clone git@github.com:openshift-cloud-functions/knative-operators.git`  
+   `$ git clone git@github.com:openshift-cloud-functions/knative-operators.git`  
 
 2. Navigate to the newly cloned repository and run the `install.sh` script.
 
-   `./etc/scripts/install.sh`  
+   `$ ./etc/scripts/install.sh`  
+
+>**NOTE** The installation script takes around 20-30 minutes to complete, depending on your system.
+
+### Accessing the OCF console (user interface)
+
+1. Once the script has completed, set the required environment variables.
+
+   `$ eval $(minishift oc-env)`  
+   `$ eval $(minishift docker-env)`
+
+2. Navigate to the OLM repository and start up the user interface using the following command.
+
+	 `$ ./scripts/run_console_local.sh`  
+
+3. Check your IP address by typing `minishift ip` into a new terminal tab or window. Use this IP address with port 9000 appended to access the console from your web browser.
+
+   `http://<minishift-ip>:9000`
 
 ## Installing OCF manually
+
+### Installing Operator Lifecycle Manager (OLM)
+
+1. Clone the OLM repository.
+
+   `$ git clone git@github.com:operator-framework/operator-lifecycle-manager.git`  
+
+2. Start Minishift.
+
+   `$ minishift start`  
+
+3. Set the required environment variables.
+
+	 `$ eval $(minishift oc-env)`  
+	  `$ eval $(minishift docker-env)`  
+
+4. Login as administrator.
+
+	`$ oc login -u system:admin`  
+
+5. Navigate to the `operator-lifecycle-manager` directory and install the latest OLM release using the following command.
+
+   `$ oc create -f deploy/okd/manifests/latest/`  
+
+>**NOTE** When starting Minishift to install OCF, or completing other tasks,  leave this terminal open and start a new one.
+
+### Installing [Istio add-on for Minishift](https://github.com/minishift/minishift-addons/tree/master/add-ons/istio#istio-add-on)
 
 ### Installing OCF on Minishift
 
 1. Start Minishift.
 
-   `minishift start`  
+   `$ minishift start`  
 
 2. Set the required environment variables.
 
-   `eval $(minishift oc-env)`  
-   `eval $(minishift docker-env)`  
+   `$ eval $(minishift oc-env)`  
+   `$ eval $(minishift docker-env)`  
 
 3. Navigate to the `knative-operators/etc/` directory and run the script
 
-   `./scripts/prep-knative.sh`  
+   `$ ./scripts/prep-knative.sh`  
 
 3. Login as administrator.
 
-   `oc login -u system:admin`  
+   `$ oc login -u system:admin`  
 
 4. Install the OCF `knative-operators CatalogSource`.
 
-   `oc apply -f https://raw.githubusercontent.com/openshift-cloud-functions/knative-operators/master/knative-operators.catalogsource.yaml`  
+   `$ oc apply -f https://raw.githubusercontent.com/openshift-cloud-functions/knative-operators/master/knative-operators.catalogsource.yaml`  
 
 ### Accessing the OCF console (user interface)
 
 1. Open a new terminal window and set the required environment variables.
 
-   `eval $(minishift oc-env)`  
-   `eval $(minishift docker-env)`
+   `$ eval $(minishift oc-env)`  
+   `$ eval $(minishift docker-env)`
 
-2. Start up the [OLM user interface](https://github.com/operator-framework/operator-lifecycle-manager#user-interface).
+2. Start up the user interface using the following command.
+
+	 `$ ./scripts/run_console_local.sh`  
 
 3. Check your IP address by typing `minishift ip` in the terminal. Use this IP address with port 9000 appended to access the console from your web browser.
 
@@ -134,11 +187,11 @@ You must install the following dependencies before installing OCF.
 
 1. In the terminal, use the following command to create the `knative-build` project and namespace.
 
-   `oc new-project knative-build`  
+   `$ oc new-project knative-build`  
 
 2. Ensure that you are in the `knative-build` namespace.
 
-   `oc project knative-build`  
+   `$ oc project knative-build`  
 
 3. In the console, the `knative-build` project from the drop-down menu.
 
@@ -162,11 +215,11 @@ You must install the following dependencies before installing OCF.
 
 1. In the terminal, use the following command to create the `knative-serving` project and namespace.
 
-   `oc new-project knative-serving`  
+   `$ oc new-project knative-serving`  
 
 2. Ensure that you are in the `knative-serving` namespace.
 
-   `oc project knative-serving`  
+   `$ oc project knative-serving`  
 
 3. Select the `knative-serving` project from the drop-down menu.
 
@@ -190,11 +243,11 @@ You must install the following dependencies before installing OCF.
 
 1. In the terminal, use the following command to create the `knative-eventing` project and namespace.
 
-   `oc new-project knative-eventing`  
+   `$ oc new-project knative-eventing`  
 
 2. Ensure that you are in the `knative-eventing` namespace.
 
-   `oc project knative-eventing`  
+   `$ oc project knative-eventing`  
 
 3. Select the `knative-eventing` project from the drop-down menu.
 
