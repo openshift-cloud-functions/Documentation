@@ -10,9 +10,9 @@ Developer Preview 0.2.0
 	- [Prerequisites](#prerequisites)
 		- [Supported platform versions](#supported-platform-versions)
 		- [Hardware requirements](#hardware-requirements)
+		- [Installing dependencies on Minishift](#installing-dependencies-on-minishift)
 	- [Installing OCF via the script provided (recommended)](#installing-ocf-via-the-script-provided-recommended)
 	- [Installing OCF manually](#installing-ocf-manually)
-		- [Installing dependencies](#installing-dependencies)
 		- [Installing OCF on Minishift](#installing-ocf-on-minishift)
 		- [Accessing the OCF console (user interface)](#accessing-the-ocf-console-user-interface)
 		- [Installing Knative Operators on Minishift using OLM](#installing-knative-operators-on-minishift-using-olm)
@@ -38,19 +38,7 @@ Developer Preview 0.2.0
 
 OCF on Minishift requires at least 24GB of memory to run correctly.
 
-## Installing OCF via the script provided (recommended)
-
-1. Clone the `knative-operators` repository.
-
-   `git clone git@github.com:openshift-cloud-functions/knative-operators.git`  
-
-2. Navigate to the newly cloned repository and run the `install.sh` script.
-
-   `./etc/scripts/install.sh`  
-
-## Installing OCF manually
-
-### Installing dependencies
+### Installing dependencies on Minishift
 
 You must install the following dependencies before installing OCF on Minishift.
 
@@ -74,6 +62,18 @@ You must install the following dependencies before installing OCF on Minishift.
 
 > **NOTE:** If this is not your first installation, and you wish to remove your Minishift profile and reinstall OCF, you can do this using the command
 > `minishift profile delete knative --force`
+
+## Installing OCF via the script provided (recommended)
+
+1. Clone the `knative-operators` repository.
+
+   `git clone git@github.com:openshift-cloud-functions/knative-operators.git`  
+
+2. Navigate to the newly cloned repository and run the `install.sh` script.
+
+   `./etc/scripts/install.sh`  
+
+## Installing OCF manually
 
 ### Installing OCF on Minishift
 
