@@ -2,7 +2,7 @@
 Developer Preview 0.2.0
 ------
 
-> **IMPORTANT:** The functionality introduced by OCF is developer preview only. Red Hat supported is not provided, and OCF should not be used in a production environment.
+> **IMPORTANT:** The functionality introduced by OCF is developer preview only. Red Hat support is not provided, and OCF should not be used in a production environment.
 
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
@@ -176,9 +176,9 @@ If you are running Minishift on your local machine, ensure that virtualization i
 
 	 `$ ./scripts/run_console_local.sh`  
 
-3. Check your IP address by typing `minishift ip` in the terminal. Use this IP address with port 9000 appended to access the console from your web browser.
+3. Check your IP address by typing `minishift ip` in a new terminal window or tab. Use this IP address with port 9000 appended to access the console from your web browser.
 
-   `http://127.0.0.1:9000`
+   `http://<minishift-ip>:9000`
 
 
 ### Installing Knative Operators on Minishift using OLM
