@@ -10,7 +10,11 @@ Developer Preview 0.2.0
 	- [Prerequisites](#prerequisites)
 		- [Supported platform versions](#supported-platform-versions)
 		- [Hardware requirements](#hardware-requirements)
-		- [Installing dependencies on Minishift](#installing-dependencies-on-minishift)
+		- [Installing dependencies](#installing-dependencies)
+			- [Installing Minishift](#installing-minishift)
+			- [Installing [Operator Lifecycle Manager (OLM)](https://github.com/operator-framework/operator-lifecycle-manager/blob/master/Documentation/install/install.md#install-the-latest-release-version-of-olm-for-okd)](#installing-operator-lifecycle-manager-olmhttpsgithubcomoperator-frameworkoperator-lifecycle-managerblobmasterdocumentationinstallinstallmdinstall-the-latest-release-version-of-olm-for-okd)
+			- [Installing [OLM user interface](https://github.com/operator-framework/operator-lifecycle-manager#user-interface)](#installing-olm-user-interfacehttpsgithubcomoperator-frameworkoperator-lifecycle-manageruser-interface)
+			- [Installing [Istio add-on for Minishift](https://github.com/minishift/minishift-addons/tree/master/add-ons/istio#istio-add-on)](#installing-istio-add-on-for-minishifthttpsgithubcomminishiftminishift-addonstreemasteradd-onsistioistio-add-on)
 	- [Installing OCF via the script provided (recommended)](#installing-ocf-via-the-script-provided-recommended)
 	- [Installing OCF manually](#installing-ocf-manually)
 		- [Installing OCF on Minishift](#installing-ocf-on-minishift)
@@ -38,30 +42,42 @@ Developer Preview 0.2.0
 
 OCF on Minishift requires at least 24GB of memory to run correctly.
 
-### Installing dependencies on Minishift
+### Installing dependencies
 
-You must install the following dependencies before installing OCF on Minishift.
+You must install the following dependencies before installing OCF.
 
-- [Minishift](https://docs.okd.io/latest/minishift/getting-started/installing.html)
-- [Operator Lifecycle Manager (OLM)](https://github.com/operator-framework/operator-lifecycle-manager/blob/master/Documentation/install/install.md#install-the-latest-release-version-of-olm-for-okd)
-- [OLM user interface](https://github.com/operator-framework/operator-lifecycle-manager#user-interface)
-- [Istio add-on for Minishift](https://github.com/minishift/minishift-addons/tree/master/add-ons/istio#istio-add-on)
-
-> **NOTE:** You will need to set the correct configuration before starting Minishift. You can do this by using the commands
->
->   `minishift profile set knative`  
->   `minishift config set openshift-version v3.11.0`  
->   `minishift config set memory 8GB`  
->   `minishift config set cpus 4`  
->   `minishift config set disk-size 50g`  
->   `minishift config set image-caching true`  
->   `minishift addons enable admin-user`  
->   `minishift addons enable anyuid`  
->
-> For more information, see the [Minishift configuration documentation](https://docs.okd.io/latest/minishift/command-ref/minishift_config.html).
+#### Installing Minishift
 
 > **NOTE:** If this is not your first installation, and you wish to remove your Minishift profile and reinstall OCF, you can do this using the command
 > `minishift profile delete knative --force`
+
+1. Download the latest version of Minishift from the [Minishift Releases page]()
+2. Extract the files
+
+   Example command:  
+
+   `tar xvzf minishift-1.28.0-linux-amd64.tgz`  
+
+3. Add the minishift binary to your PATH environment variable.
+
+   Example command:  
+
+   `cp minishift-1.28.0-linux-amd64/minishift /bin`  
+
+4. You will need to set the correct configuration before starting Minishift. You can do this by using the commands
+
+   `minishift profile set knative`  
+	 `minishift config set openshift-version v3.11.0`  
+	 `minishift config set memory 8GB`  
+	 `minishift config set cpus 4`  
+	 `minishift config set disk-size 50g`  
+	 `minishift config set image-caching true`  
+	 `minishift addons enable admin-user`  
+	 `minishift addons enable anyuid`
+
+#### Installing [Operator Lifecycle Manager (OLM)](https://github.com/operator-framework/operator-lifecycle-manager/blob/master/Documentation/install/install.md#install-the-latest-release-version-of-olm-for-okd)
+#### Installing [OLM user interface](https://github.com/operator-framework/operator-lifecycle-manager#user-interface)
+#### Installing [Istio add-on for Minishift](https://github.com/minishift/minishift-addons/tree/master/add-ons/istio#istio-add-on)
 
 ## Installing OCF via the script provided (recommended)
 
