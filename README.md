@@ -1,24 +1,24 @@
-# OpenShift Cloud Functions (OCF)
+# Knative Dev Preview in OpenShift
 Developer Preview 0.2.0
 ------
 
-> **IMPORTANT:** The functionality introduced by OCF is developer preview only. Red Hat support is not provided, and OCF should not be used in a production environment.
+> **IMPORTANT:** The functionality introduced by Knative Dev Preview in OpenShift is developer preview only. Red Hat support is not provided, and this release should not be used in a production environment.
 
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
-- [OpenShift Cloud Functions (OCF)](#openshift-cloud-functions-ocf)
+- [Knative Dev Preview in OpenShift](#openshift-cloud-functions-ocf)
 	- [Prerequisites](#prerequisites)
 		- [Supported platform versions](#supported-platform-versions)
 		- [Hardware requirements](#hardware-requirements)
 		- [Installing dependencies](#installing-dependencies)
 			- [Installing Minishift](#installing-minishift)
-	- [Installing OCF via the script provided (recommended)](#installing-ocf-via-the-script-provided-recommended)
-		- [Accessing the OCF console (user interface)](#accessing-the-ocf-console-user-interface)
-	- [Installing OCF manually](#installing-ocf-manually)
+	- [Installing Knative Dev Preview in OpenShift via the script provided (recommended)](#installing-ocf-via-the-script-provided-recommended)
+		- [Accessing the Knative Dev Preview in OpenShift console (user interface)](#accessing-the-ocf-console-user-interface)
+	- [Installing Knative Dev Preview in OpenShift manually](#installing-ocf-manually)
 		- [Installing Operator Lifecycle Manager (OLM)](#installing-operator-lifecycle-manager-olm)
 		- [Installing [Istio add-on for Minishift](https://github.com/minishift/minishift-addons/tree/master/add-ons/istio#istio-add-on)](#installing-istio-add-on-for-minishifthttpsgithubcomminishiftminishift-addonstreemasteradd-onsistioistio-add-on)
-		- [Installing OCF on Minishift](#installing-ocf-on-minishift)
-		- [Accessing the OCF console (user interface)](#accessing-the-ocf-console-user-interface)
+		- [Installing Knative Dev Preview in OpenShift on Minishift](#installing-ocf-on-minishift)
+		- [Accessing the Knative Dev Preview in OpenShift console (user interface)](#accessing-the-ocf-console-user-interface)
 		- [Installing Knative Operators on Minishift using OLM](#installing-knative-operators-on-minishift-using-olm)
 			- [Knative build](#knative-build)
 			- [Knative serving](#knative-serving)
@@ -26,11 +26,11 @@ Developer Preview 0.2.0
 
 <!-- /TOC -->
 
-> **NOTE ON INSTALLATION:** All of the developer preview components of OpenShift Cloud Functions, including software dependencies and configurations, can be installed by using the script provided by Red Hat in the OpenShift Cloud Functions `knative-operators` repository. The steps for manual installation are also included in this document to provide information about the steps completed by running the script, however the script installation method is recommended.
+> **NOTE ON INSTALLATION:** All of the developer preview components of Knative Dev Preview in OpenShift, including software dependencies and configurations, can be installed by using the script provided by Red Hat in the OpenShift Cloud Functions `knative-operators` repository. The steps for manual installation are also included in this document to provide information about the steps completed by running the script, however the script installation method is recommended.
 
 ## Prerequisites
 
-> **IMPORTANT:** You will need cluster administrator privileges to install and use OCF.
+> **IMPORTANT:** You will need cluster administrator privileges to install and use Knative Dev Preview in OpenShift.
 
 ### Supported platform versions
 
@@ -40,17 +40,17 @@ Developer Preview 0.2.0
 
 ### Hardware requirements
 
-OCF on Minishift requires at least 24GB of memory to run correctly.
+Knative Dev Preview in OpenShift using Minishift requires at least 24GB of memory to run correctly.
 
 If you are running Minishift on your local machine, ensure that virtualization is enabled, as this installation required the use of virtual machines (KVM).
 
 ### Installing dependencies
 
-> **IMPORTANT:** Docker and Kubernetes are also required to install and use OCF, however these components are outside the scope of this documentation, and instructions can be found easily online.
+> **IMPORTANT:** Docker and Kubernetes are also required to install and use Knative Dev Preview in OpenShift, however these components are outside the scope of this documentation, and instructions can be found easily online.
 
 #### Installing Minishift
 
-> **NOTE:** If this is not your first installation, and you wish to remove your Minishift profile and reinstall OCF, you can do this using the command
+> **NOTE:** If this is not your first installation, and you wish to remove your Minishift profile and reinstall Knative Dev Preview in OpenShift, you can do this using the command
 >
 >   `$ minishift profile delete knative --force`  
 
@@ -86,7 +86,7 @@ If you are running Minishift on your local machine, ensure that virtualization i
 	 `$ minishift addons enable admin-user`  
 	 `$ minishift addons enable anyuid`  
 
-## Installing OCF via the script provided (recommended)
+## Installing Knative Dev Preview in OpenShift via the script provided (recommended)
 
 1. Clone the `knative-operators` repository.
 
@@ -98,7 +98,7 @@ If you are running Minishift on your local machine, ensure that virtualization i
 
 >**NOTE** The installation script takes around 20-30 minutes to complete, depending on your system.
 
-### Accessing the OCF console (user interface)
+### Accessing the Knative Dev Preview in OpenShift console (user interface)
 
 1. Once the script has completed, set the required environment variables.
 
@@ -113,7 +113,7 @@ If you are running Minishift on your local machine, ensure that virtualization i
 
    `http://<minishift-ip>:9000`
 
-## Installing OCF manually
+## Installing Knative Dev Preview in OpenShift manually
 
 ### Installing Operator Lifecycle Manager (OLM)
 
@@ -140,9 +140,10 @@ If you are running Minishift on your local machine, ensure that virtualization i
 
 >**NOTE** When starting Minishift to install OCF, or completing other tasks,  leave this terminal open and start a new one.
 
-### Installing [Istio add-on for Minishift](https://github.com/minishift/minishift-addons/tree/master/add-ons/istio#istio-add-on)
+### Installing Istio add-on for Minishift
+[See Istio instructions here](https://github.com/minishift/minishift-addons/tree/master/add-ons/istio#istio-add-on)
 
-### Installing OCF on Minishift
+### Installing Knative Dev Preview in OpenShift on Minishift
 
 1. Start Minishift.
 
@@ -161,11 +162,11 @@ If you are running Minishift on your local machine, ensure that virtualization i
 
    `$ oc login -u system:admin`  
 
-4. Install the OCF `knative-operators CatalogSource`.
+4. Install the Knative Dev Preview in OpenShift `knative-operators CatalogSource`.
 
    `$ oc apply -f https://raw.githubusercontent.com/openshift-cloud-functions/knative-operators/master/knative-operators.catalogsource.yaml`  
 
-### Accessing the OCF console (user interface)
+### Accessing the Knative Dev Preview in OpenShift console (user interface)
 
 1. Open a new terminal window and set the required environment variables.
 
