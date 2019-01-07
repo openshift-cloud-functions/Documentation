@@ -4,28 +4,6 @@ Developer Preview 0.2.0
 
 > **IMPORTANT:** The functionality introduced by Knative Dev Preview in OpenShift is developer preview only. Red Hat support is not provided, and this release should not be used in a production environment.
 
-<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
-
-- [Knative Dev Preview in OpenShift](#openshift-cloud-functions-ocf)
-	- [Prerequisites](#prerequisites)
-		- [Supported platform versions](#supported-platform-versions)
-		- [Hardware requirements](#hardware-requirements)
-		- [Installing dependencies](#installing-dependencies)
-			- [Installing Minishift](#installing-minishift)
-	- [Installing Knative Dev Preview in OpenShift via the script provided (recommended)](#installing-ocf-via-the-script-provided-recommended)
-		- [Accessing the Knative Dev Preview in OpenShift console (user interface)](#accessing-the-ocf-console-user-interface)
-	- [Installing Knative Dev Preview in OpenShift manually](#installing-ocf-manually)
-		- [Installing Operator Lifecycle Manager (OLM)](#installing-operator-lifecycle-manager-olm)
-		- [Installing [Istio add-on for Minishift](https://github.com/minishift/minishift-addons/tree/master/add-ons/istio#istio-add-on)](#installing-istio-add-on-for-minishifthttpsgithubcomminishiftminishift-addonstreemasteradd-onsistioistio-add-on)
-		- [Installing Knative Dev Preview in OpenShift on Minishift](#installing-ocf-on-minishift)
-		- [Accessing the Knative Dev Preview in OpenShift console (user interface)](#accessing-the-ocf-console-user-interface)
-		- [Installing Knative Operators on Minishift using OLM](#installing-knative-operators-on-minishift-using-olm)
-			- [Knative build](#knative-build)
-			- [Knative serving](#knative-serving)
-			- [Knative eventing](#knative-eventing)
-
-<!-- /TOC -->
-
 > **NOTE ON INSTALLATION:** All of the developer preview components of Knative Dev Preview in OpenShift, including software dependencies and configurations, can be installed by using the script provided by Red Hat in the OpenShift Cloud Functions `knative-operators` repository. The steps for manual installation are also included in this document to provide information about the steps completed by running the script, however the script installation method is recommended.
 
 ## Prerequisites
