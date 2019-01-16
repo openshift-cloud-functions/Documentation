@@ -17,3 +17,15 @@ Developer Preview 0.3.0
 | OpenShift      | 3.11 or newer |
 
 > **IMPORTANT:** Docker and Kubernetes are also required to install and use Knative on an OpenShift cluster, however these components are outside the scope of this documentation.
+
+## Installing Knative on an OpenShift cluster using the script provided (recommended)
+
+1. Clone the `knative-operators` repository.
+
+   `$ git clone git@github.com:openshift-cloud-functions/knative-operators.git`  
+
+2. Navigate to the newly cloned repository and run the `install.sh` script.
+
+   `$ ./etc/scripts/install.sh`  
+
+>**NOTE** The installation script takes around 20-30 minutes to complete, depending on your system.
