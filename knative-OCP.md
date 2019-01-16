@@ -46,3 +46,21 @@ Developer Preview 0.3.0
   Enter to continue or Ctrl-C to exit: `   
 
   Press Enter to continue.
+
+## Post-installation tasks
+
+### Creating routes
+
+Your Knative services will not be accessible from outside of the OpenShift cluster by default, however you can enable access by creating routes.
+
+1. Expose the `knative-ingressgateway`.
+
+   `oc -n istio-system expose svc/knative-ingressgateway`   
+
+2. Check that the route has been created and note the hostname.
+
+   `oc get route -n istio-system knative-ingressgateway`   
+
+3. Deploy your source code and access it through the route.
+
+   `curl -v -H "Host: hello-go.default.example.com" http://knative-ingressgateway-istio-system.apps.<yourcity-guid>.openshiftworkshop.com:32380`   
