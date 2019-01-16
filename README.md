@@ -1,4 +1,4 @@
-# Knative developer preview documentation
+# Knative on OpenShift developer preview documentation
 
-[Knative on a Minishift cluster](knative-minishift.md)
-[Knative on an OpenShift cluster](knative-OCP.md)
+* [Knative on a Minishift cluster](knative-minishift.md)
+* [Knative on an OpenShift cluster](knative-OCP.md)
