@@ -38,11 +38,11 @@ Developer Preview 0.3.0
 3. Once the script starts, you will see the following warning and prompt.
 
    `WARNING: This script will blindly attempt to install OLM, istio, and knative on your OpenShift cluster, so if   any are already there, hijinks may ensue.`
-
-  `If your cluster isn't minishift, ensure $KUBE_SSH_KEY and $KUBE_SSH_USER are set`   
-
-  `Pass -q to disable this warning`   
-
-  `Enter to continue or Ctrl-C to exit:`    `   
-
-  `Press Enter to continue.`   
+   
+   `If your cluster isn't minishift, ensure $KUBE_SSH_KEY and $KUBE_SSH_USER are set`   
+   
+   `Pass -q to disable this warning`   
+   
+   `Enter to continue or Ctrl-C to exit:`   
+   
+   Press Enter to continue.
