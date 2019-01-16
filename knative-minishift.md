@@ -64,7 +64,7 @@ If you are running Minishift on your local machine, ensure that virtualization i
 	 `$ minishift addons enable admin-user`  
 	 `$ minishift addons enable anyuid`  
 
-## Installing Knative on a Minishift cluster via the script provided (recommended)
+## Installing Knative on a Minishift cluster using the script provided (recommended)
 
 1. Clone the `knative-operators` repository.
 
