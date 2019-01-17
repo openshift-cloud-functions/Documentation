@@ -24,10 +24,10 @@ Developer Preview 0.3.0
 
    `$ git clone git@github.com:openshift-cloud-functions/knative-operators.git`  
 
-2. Set the following SSH properties.
+2. Set the following SSH properties using your OpenShift cluster credentials.
 
-   `export KUBE_SSH_USER=ec2-user`   
-   `export KUBE_SSH_KEY=~/.ssh/ocp-workshop.pem`   
+   `export KUBE_SSH_USER=<username>`   
+   `export KUBE_SSH_KEY=<path-to-private-ssh-key>`   
 
 2. Navigate to the newly cloned repository and run the `install.sh` script.
 
