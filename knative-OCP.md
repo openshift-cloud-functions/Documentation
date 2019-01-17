@@ -81,5 +81,5 @@ Your Knative services will not be accessible from outside of the OpenShift clust
 
 3. Deploy your source code and access it through the route.
 
-   `curl -v -H "Host: hello-go.default.example.com" http://knative-ingressgateway-istio-system.apps.<yourcity-guid>.openshiftworkshop.com:32380`   
+   `curl -v -H "Host: hello-go.default.example.com" http://example.com`   
    
