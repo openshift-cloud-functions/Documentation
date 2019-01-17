@@ -150,7 +150,7 @@ If you have a previously existing Minishift cluster, and wish to remove your Min
 
    `$ oc login -u system:admin`  
 
-4. Install the Knative on a Minishift cluster `knative-operators CatalogSource`.
+4. Install the `knative-operators` catalog source.
 
    `$ oc apply -f https://raw.githubusercontent.com/openshift-cloud-functions/knative-operators/master/knative-operators.catalogsource.yaml`  
 
