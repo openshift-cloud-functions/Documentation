@@ -46,6 +46,15 @@ Developer Preview 0.3.0
    `Enter to continue or Ctrl-C to exit:`   
    
    Press Enter to continue.
+   
+## Manual installation steps
+
+If you wish to install Knative on an OpenShift cluster manually (without using the script), you will need to complete the following steps which are currently included in `install.sh`.
+
+1. Enable admission webhooks
+2. Install OLM
+3. Install Istio
+4. Install Knative components (Knative Build, Knative Serving, Knative Eventing and Operator groups).
 
 ## Post-installation tasks
 
