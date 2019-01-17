@@ -55,6 +55,15 @@ If you wish to install Knative on an OpenShift cluster manually (without using t
 2. Install OLM
 3. Install Istio
 4. Install Knative components (Knative Build, Knative Serving, Knative Eventing and Operator groups).
+5. Skip tag resolution for internal registry.
+
+   `oc -n knative-serving get cm config-controller -oyaml | sed "s/\(^ *registriesSkippingTagResolving.*$\)/\1,docker-registry.default.svc:5000/" | oc apply -f -`   
+   
+6. Add image streams to build images.
+7. Add required Istio permissions.
+
+   `oc adm policy add-scc-to-user privileged -z default`   
+   `oc adm policy add-scc-to-user anyuid -z default`   
 
 ## Post-installation tasks
 
