@@ -8,6 +8,7 @@ Developer Preview 0.3.0
 	- [Prerequisites](#prerequisites)
 		- [Supported platform versions](#supported-platform-versions)
 	- [Installing Knative on an OpenShift cluster using the script provided (recommended)](#installing-knative-on-an-openshift-cluster-using-the-script-provided-recommended)
+	- [Manual installation steps](#manual-installation-steps)
 	- [Post-installation tasks](#post-installation-tasks)
 		- [Allowing external access to Knative services using a configured hostname.](#allowing-external-access-to-knative-services-using-a-configured-hostname)
 	- [Additional resources](#additional-resources)
