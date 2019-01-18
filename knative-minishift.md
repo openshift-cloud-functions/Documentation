@@ -2,6 +2,30 @@
 Developer Preview 0.3.0
 ------
 
+<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
+
+- [Knative on a Minishift cluster](#knative-on-a-minishift-cluster)
+	- [Prerequisites](#prerequisites)
+		- [Supported platform versions](#supported-platform-versions)
+		- [Resource requirements](#resource-requirements)
+	- [Installing Knative on an existing Minishift cluster](#installing-knative-on-an-existing-minishift-cluster)
+		- [Installing Knative on a Minishift cluster using install-on-minishift.sh](#installing-knative-on-a-minishift-cluster-using-install-on-minishiftsh)
+	- [Installing dependencies for a new Minishift cluster](#installing-dependencies-for-a-new-minishift-cluster)
+		- [Installing Minishift](#installing-minishift)
+	- [Installing Knative on a Minishift cluster using the script provided (recommended)](#installing-knative-on-a-minishift-cluster-using-the-script-provided-recommended)
+		- [Accessing the Knative on a Minishift cluster console (user interface)](#accessing-the-knative-on-a-minishift-cluster-console-user-interface)
+	- [Installing Knative on a Minishift cluster manually](#installing-knative-on-a-minishift-cluster-manually)
+		- [Installing Operator Lifecycle Manager (OLM)](#installing-operator-lifecycle-manager-olm)
+		- [Installing Istio add-on for Minishift](#installing-istio-add-on-for-minishift)
+		- [Installing Knative on a Minishift cluster on Minishift](#installing-knative-on-a-minishift-cluster-on-minishift)
+		- [Accessing the Knative on a Minishift cluster console (user interface)](#accessing-the-knative-on-a-minishift-cluster-console-user-interface)
+		- [Installing Knative Operators on Minishift using OLM](#installing-knative-operators-on-minishift-using-olm)
+			- [Knative build](#knative-build)
+			- [Knative serving](#knative-serving)
+			- [Knative eventing](#knative-eventing)
+
+<!-- /TOC -->
+
 > **IMPORTANT:** The functionality introduced by  is developer preview only. Red Hat support is not provided, and this release should not be used in a production environment.
 
 > **NOTE ON INSTALLATION:** All of the required components of Knative on a Minishift cluster, including software dependencies and configurations, can be installed by using the script provided by Red Hat in the OpenShift Cloud Functions `knative-operators` repository. The steps for manual installation are also included in this document to provide information about the steps completed by running the script, however the script installation method is recommended.
@@ -185,26 +209,26 @@ If you have a previously existing Minishift cluster, and wish to remove your Min
 
 3. Create and apply a new Subscription.
 
-   `cat <<EOF | oc apply -f -
-     apiVersion: operators.coreos.com/v1alpha1
-    kind: Subscription
-    metadata:
-      name: knative-build-subscription
-      generateName: knative-build-
-      namespace: knative-build
-    spec:
-      source: knative-operators
-      name: knative-build
-      startingCSV: knative-build.v0.2.0
-      channel: alpha
-   EOF`   
+   `cat <<EOF | oc apply -f -`   
+    `apiVersion: operators.coreos.com/v1alpha1`   
+    `kind: Subscription`   
+    `metadata:`   
+      `name: knative-build-subscription`   
+      `generateName: knative-build-`   
+      `namespace: knative-build`   
+    `spec:`   
+      `source: knative-operators`   
+      `name: knative-build`   
+      `startingCSV: knative-build.v0.2.0`   
+      `channel: alpha`   
+   `EOF`   
 
 #### Knative serving
 
 1. Create the `knative-serving` project and namespace.
 
    `oc new-project knative-serving`  
-    `oc create ns knative-serving`   
+   `oc create ns knative-serving`   
 
 2. Ensure that you are in the `knative-serving` namespace.
 
@@ -212,19 +236,19 @@ If you have a previously existing Minishift cluster, and wish to remove your Min
 
 3. Create and apply a new Subscription.
 
-    `cat <<EOF | oc apply -f -
-    apiVersion: operators.coreos.com/v1alpha1
-    kind: Subscription
-    metadata:
-      name: knative-serving-subscription
-      generateName: knative-serving-
-      namespace: knative-serving
-    spec:
-      source: knative-operators
-      name: knative-serving
-      startingCSV: knative-serving.v0.2.2
-      channel: alpha
-   EOF`   
+    `cat <<EOF | oc apply -f -`   
+    ` apiVersion: operators.coreos.com/v1alpha1`   
+    `kind: Subscription`   
+    `metadata:`   
+    `name: knative-serving-subscription`   
+      `generateName: knative-serving-`   
+      `namespace: knative-serving`   
+    `spec:`   
+      `source: knative-operators`   
+      `name: knative-serving`   
+      `startingCSV: knative-serving.v0.2.2`   
+      `channel: alpha`   
+      `EOF`   
 
 #### Knative eventing
 
@@ -239,16 +263,16 @@ If you have a previously existing Minishift cluster, and wish to remove your Min
 
 3. Create and apply a new Subscription.
 
-    `cat <<EOF | oc apply -f -
-    apiVersion: operators.coreos.com/v1alpha1
-    kind: Subscription
-    metadata:
-      name: knative-eventing-subscription
-      generateName: knative-eventing-
-      namespace: knative-eventing
-    spec:
-      source: knative-operators
-      name: knative-eventing
-      startingCSV: knative-eventing.v0.2.1
-      channel: alpha
-   EOF`   
+    `cat <<EOF | oc apply -f -`   
+    `apiVersion: operators.coreos.com/v1alpha1`   
+    `kind: Subscription`   
+    `metadata:`   
+      `name: knative-eventing-subscription`   
+      `generateName: knative-eventing-`   
+      `namespace: knative-eventing`   
+    `spec:`   
+      `source: knative-operators`   
+      `name: knative-eventing`   
+      `startingCSV: knative-eventing.v0.2.1`   
+      `channel: alpha`   
+   `EOF`   
