@@ -26,15 +26,15 @@ If you are running Minishift on your local machine, ensure that virtualization i
 
 If you have a previously existing Minishift cluster, and wish to remove your Minishift profile to reinstall Knative, you can do this by using `install-on-minishift.sh`.
 
-### Installing Knative on a Minishift cluster using install-minishift.sh
+### Installing Knative on a Minishift cluster using install-on-minishift.sh
 
 1. Clone the `knative-operators` repository.
 
    `$ git clone git@github.com:openshift-cloud-functions/knative-operators.git`  
 
-2. Navigate to the newly cloned repository and run the `install-minishift.sh` script.
+2. Navigate to the newly cloned repository and run the `install-on-minishift.sh` script.
 
-   `$ ./etc/scripts/install-minishift.sh`  
+   `$ ./etc/scripts/install-on-minishift.sh`  
 
 ## Installing dependencies for a new Minishift cluster
 
@@ -174,84 +174,81 @@ If you have a previously existing Minishift cluster, and wish to remove your Min
 
 #### Knative build
 
-1. In the terminal, use the following command to create the `knative-build` project and namespace.
+1. Create the `knative-build` project and namespace.
 
-   `$ oc new-project knative-build`  
+   `oc new-project knative-build`  
+   `oc create ns knative-build`   
 
 2. Ensure that you are in the `knative-build` namespace.
 
-   `$ oc project knative-build`  
+  `oc project knative-build`  
 
-3. In the console, the `knative-build` project from the drop-down menu.
+3. Create and apply a new Subscription.
 
-   ![Select knative-build project](images/build-proj.png)  
-
-4. Create a new Subscription, by selecting the **Create Subscription** button for the `knative-build` Operator in the **Package Manifests** tab.
-
-   ![Knative operators](images/ops-for-subs.png "Logo Title Text 1")  
-
-5. You will be able to see and edit the configuration of the Subscription being created before you finalize this.
-
-   For more information about Subscription configurations, see the [OLM documentation](https://github.com/operator-framework/operator-lifecycle-manager#discovery-catalogs-and-automated-upgrades).  
-
-   ![Subscription configuration](images/sub-config-build.png "Logo Title Text 1")  
-
-6. The Subscription will now be created. Once this process is complete, you will see the Subscription information in the **Subscriptions** tab.
-
-7. You can verify the setup by checking that the pods are running by going to the **Workloads** > **Pods** tab.
+   `cat <<EOF | oc apply -f -
+     apiVersion: operators.coreos.com/v1alpha1
+    kind: Subscription
+    metadata:
+      name: knative-build-subscription
+      generateName: knative-build-
+      namespace: knative-build
+    spec:
+      source: knative-operators
+      name: knative-build
+      startingCSV: knative-build.v0.2.0
+      channel: alpha
+   EOF`   
 
 #### Knative serving
 
-1. In the terminal, use the following command to create the `knative-serving` project and namespace.
+1. Create the `knative-serving` project and namespace.
 
-   `$ oc new-project knative-serving`  
+   `oc new-project knative-serving`  
+    `oc create ns knative-serving`   
 
 2. Ensure that you are in the `knative-serving` namespace.
 
-   `$ oc project knative-serving`  
+    `oc project knative-serving`  
 
-3. Select the `knative-serving` project from the drop-down menu.
+3. Create and apply a new Subscription.
 
-   ![Select knative-serving project](images/serving-proj.png)   
-
-4. Create a new Subscription, by selecting the **Create Subscription** button for the `knative-serving` Operator in the **Package Manifests** tab.
-
-   ![Knative operators](images/ops-for-subs.png "Logo Title Text 1")  
-
-5. You will be able to see and edit the configuration of the Subscription being created before you finalize this.
-
-   For more information about Subscription configurations, see the [OLM documentation](https://github.com/operator-framework/operator-lifecycle-manager#discovery-catalogs-and-automated-upgrades).  
-
-   ![Subscription configuration](images/sub-config-serving.png "Logo Title Text 1")  
-
-6. he Subscription will now be created. Once this process is complete, you will see the Subscription information in the **Subscriptions** tab.
-
-7. You can verify the setup by checking that the pods are running by going to the **Workloads** > **Pods** tab.
+    `cat <<EOF | oc apply -f -
+    apiVersion: operators.coreos.com/v1alpha1
+    kind: Subscription
+    metadata:
+      name: knative-serving-subscription
+      generateName: knative-serving-
+      namespace: knative-serving
+    spec:
+      source: knative-operators
+      name: knative-serving
+      startingCSV: knative-serving.v0.2.2
+      channel: alpha
+   EOF`   
 
 #### Knative eventing
 
-1. In the terminal, use the following command to create the `knative-eventing` project and namespace.
+1. Create the `knative-eventing` project and namespace.
 
-   `$ oc new-project knative-eventing`  
+    `oc new-project knative-eventing`  
+    `oc create ns knative-eventing`   
 
 2. Ensure that you are in the `knative-eventing` namespace.
 
-   `$ oc project knative-eventing`  
+    `oc project knative-eventing`  
 
-3. Select the `knative-eventing` project from the drop-down menu.
+3. Create and apply a new Subscription.
 
-   ![Select knative-eventing project](images/eventing-proj.png)  
-
-4. Create a new Subscription, by selecting the **Create Subscription** button for the `knative-eventing` Operator in the **Package Manifests** tab.
-
-   ![Knative operators](images/ops-for-subs.png "Logo Title Text 1")  
-
-5. You will be able to see and edit the configuration of the Subscription being created before you finalize this.
-
-   For more information about Subscription configurations, see the [OLM documentation](https://github.com/operator-framework/operator-lifecycle-manager#discovery-catalogs-and-automated-upgrades).  
-
-   ![Subscription configuration](images/sub-config-eventing.png "Logo Title Text 1")  
-
-6. The Subscription will now be created. Once this process is complete, you will see the Subscription information in the **Subscriptions** tab.
-
-7. You can verify the setup by checking that the pods are running by going to the **Workloads** > **Pods** tab.
+    `cat <<EOF | oc apply -f -
+    apiVersion: operators.coreos.com/v1alpha1
+    kind: Subscription
+    metadata:
+      name: knative-eventing-subscription
+      generateName: knative-eventing-
+      namespace: knative-eventing
+    spec:
+      source: knative-operators
+      name: knative-eventing
+      startingCSV: knative-eventing.v0.2.1
+      channel: alpha
+   EOF`   
