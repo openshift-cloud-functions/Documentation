@@ -13,7 +13,6 @@ Developer Preview 0.3.0
 	- [Installing dependencies for a new Minishift cluster](#installing-dependencies-for-a-new-minishift-cluster)
 		- [Installing Minishift](#installing-minishift)
 	- [Installing Knative on a Minishift cluster using the script provided (recommended)](#installing-knative-on-a-minishift-cluster-using-the-script-provided-recommended)
-		- [Accessing the Knative on a Minishift cluster console (user interface)](#accessing-the-knative-on-a-minishift-cluster-console-user-interface)
 	- [Installing Knative on a Minishift cluster manually](#installing-knative-on-a-minishift-cluster-manually)
 		- [Installing Operator Lifecycle Manager (OLM)](#installing-operator-lifecycle-manager-olm)
 		- [Installing Istio add-on for Minishift](#installing-istio-add-on-for-minishift)
@@ -177,22 +176,6 @@ If you have a previously existing Minishift cluster, and wish to remove your Min
 4. Install the `knative-operators` catalog source.
 
    `$ oc apply -f https://raw.githubusercontent.com/openshift-cloud-functions/knative-operators/master/knative-operators.catalogsource.yaml`  
-
-### Accessing the Knative on a Minishift cluster console (user interface)
-
-1. Open a new terminal window and set the required environment variables.
-
-   `$ eval $(minishift oc-env)`  
-   `$ eval $(minishift docker-env)`
-
-2. Start up the user interface using the following command.
-
-	 `$ ./scripts/run_console_local.sh`  
-
-3. Check your IP address by typing `minishift ip` in a new terminal window or tab. Use this IP address with port 9000 appended to access the console from your web browser.
-
-   `http://<minishift-ip>:9000`
-
 
 ### Installing Knative Operators on Minishift using OLM
 
