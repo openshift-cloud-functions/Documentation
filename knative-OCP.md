@@ -36,10 +36,10 @@ Developer Preview 0.3.0
 
    `$ git clone git@github.com:openshift-cloud-functions/knative-operators.git`  
 
-2. Set the following SSH properties.
+2. Set the following SSH properties using your OpenShift cluster credentials.
 
-   `export KUBE_SSH_USER=ec2-user`   
-   `export KUBE_SSH_KEY=~/.ssh/ocp-workshop.pem`   
+   `export KUBE_SSH_USER=<username>`   
+   `export KUBE_SSH_KEY=<path-to-private-ssh-key>`   
 
 2. Navigate to the newly cloned repository and run the `install.sh` script.
 
@@ -58,6 +58,24 @@ Developer Preview 0.3.0
    `Enter to continue or Ctrl-C to exit:`   
 
    Press Enter to continue.
+   
+## Manual installation steps
+
+If you wish to install Knative on an OpenShift cluster manually (without using the script), you will need to complete the following steps which are currently included in `install.sh`.
+
+1. Enable admission webhooks
+2. Install OLM
+3. Install Istio
+4. Install Knative components (Knative Build, Knative Serving, Knative Eventing and Operator groups).
+5. Skip tag resolution for internal registry.
+
+   `oc -n knative-serving get cm config-controller -oyaml | sed "s/\(^ *registriesSkippingTagResolving.*$\)/\1,docker-registry.default.svc:5000/" | oc apply -f -`   
+   
+6. Add image streams to build images.
+7. Add required Istio permissions.
+
+   `oc adm policy add-scc-to-user privileged -z default`   
+   `oc adm policy add-scc-to-user anyuid -z default`   
 
 ## Post-installation tasks
 

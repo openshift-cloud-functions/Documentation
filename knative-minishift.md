@@ -16,21 +16,31 @@ Developer Preview 0.3.0
 | ------------- |:-------------:|
 | Minishift      | 1.25.0 or newer |
 
-### Hardware requirements
+### Resource requirements
 
 Knative on a Minishift cluster requires at least 12GB of memory to run correctly.
 
 If you are running Minishift on your local machine, ensure that virtualization is enabled, as this installation required the use of virtual machines (KVM).
 
-### Installing dependencies
+## Installing Knative on an existing Minishift cluster
+
+If you have a previously existing Minishift cluster, and wish to remove your Minishift profile to reinstall Knative, you can do this by using `install-on-minishift.sh`.
+
+### Installing Knative on a Minishift cluster using install-minishift.sh
+
+1. Clone the `knative-operators` repository.
+
+   `$ git clone git@github.com:openshift-cloud-functions/knative-operators.git`  
+
+2. Navigate to the newly cloned repository and run the `install-minishift.sh` script.
+
+   `$ ./etc/scripts/install-minishift.sh`  
+
+## Installing dependencies for a new Minishift cluster
 
 > **IMPORTANT:** Docker and Kubernetes are also required to install and use Knative on a Minishift cluster, however these components are outside the scope of this documentation.
 
-#### Installing Minishift
-
-> **NOTE:** If this is not your first installation, and you wish to remove your Minishift profile and reinstall Knative on a Minishift cluster, you can do this using the command
->
->   `$ minishift profile delete knative --force`  
+### Installing Minishift
 
 1. Download the latest version of Minishift from the [Minishift Releases page](https://github.com/minishift/minishift/releases)
 2. Extract the files.
@@ -140,7 +150,7 @@ If you are running Minishift on your local machine, ensure that virtualization i
 
    `$ oc login -u system:admin`  
 
-4. Install the Knative on a Minishift cluster `knative-operators CatalogSource`.
+4. Install the `knative-operators` catalog source.
 
    `$ oc apply -f https://raw.githubusercontent.com/openshift-cloud-functions/knative-operators/master/knative-operators.catalogsource.yaml`  
 
