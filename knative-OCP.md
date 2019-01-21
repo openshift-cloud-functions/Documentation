@@ -27,28 +27,32 @@ Developer Preview 0.3.0
 
 | Platform        | Supported versions           |
 | ------------- |:-------------:|
-| OpenShift      | 3.11 or newer |
+| OpenShift      | 3.11		|
 
 > **IMPORTANT:** Docker and Kubernetes are also required to install and use Knative on an OpenShift cluster, however these components are outside the scope of this documentation.
 
 ## Installing Knative on an OpenShift cluster using the script provided (recommended)
 
-1. Clone the `knative-operators` repository.
+1. Login to the cluster using your admin credentials.
 
-   `$ git clone git@github.com:openshift-cloud-functions/knative-operators.git`  
+   `oc login <admin-credentials>`
+   
+2. Clone the `knative-operators` repository.
 
-2. Set the following SSH properties using your OpenShift cluster credentials.
+   `git clone git@github.com:openshift-cloud-functions/knative-operators.git`  
+
+3. Set the following SSH properties using your OpenShift cluster credentials.
 
    `export KUBE_SSH_USER=<username>`   
    `export KUBE_SSH_KEY=<path-to-private-ssh-key>`   
 
-2. Navigate to the newly cloned repository and run the `install.sh` script.
+4. Navigate to the newly cloned repository and run the `install.sh` script.
 
-   `$ ./etc/scripts/install.sh`  
+   `./etc/scripts/install.sh`  
 
 >**NOTE** The installation script takes around 20-30 minutes to complete, depending on your system.
 
-3. Once the script starts, you will see the following warning and prompt.
+5. Once the script starts, you will see the following warning and prompt.
 
    `WARNING: This script will blindly attempt to install OLM, istio, and knative on your OpenShift cluster, so if   any are already there, hijinks may ensue.`
 
@@ -60,7 +64,7 @@ Developer Preview 0.3.0
 
    Press Enter to continue.
    
-## Manual installation steps
+## Summary of installation steps
 
 If you wish to install Knative on an OpenShift cluster manually (without using the script), you will need to complete the following steps which are currently included in `install.sh`.
 
@@ -99,7 +103,7 @@ Your Knative services will not be accessible from outside of the OpenShift clust
 
   To do this, you must create a wildcard yaml file (in our example this is named `wildcard-routes.yml`) with the following contents.
 
-    `apiVersion: route.openshift.io/v1
+    apiVersion: route.openshift.io/v1
     kind: Route
       metadata:
       name: knative-ingressgateway-wildcard
@@ -112,11 +116,11 @@ Your Knative services will not be accessible from outside of the OpenShift clust
         kind: Service
         name: knative-ingressgateway
         weight: 100
-        wildcardPolicy: Subdomain`   
+        wildcardPolicy: Subdomain   
 
   Apply the yaml file.
 
-     `oc apply -f wildcard-routes.yml`   
+   `oc apply -f wildcard-routes.yml`   
 
 6. Clone the demo repository.
 
