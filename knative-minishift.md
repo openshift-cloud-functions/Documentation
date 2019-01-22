@@ -1,5 +1,5 @@
 # Knative on a Minishift cluster
-Developer Preview
+Preview
 ------
 
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
@@ -23,7 +23,7 @@ Developer Preview
 
 <!-- /TOC -->
 
-> **IMPORTANT:** The functionality introduced by  is developer preview only. Red Hat support is not provided, and this release should not be used in a production environment.
+> **IMPORTANT:** The functionality introduced by  is preview only. Red Hat support is not provided, and this release should not be used in a production environment.
 
 > **NOTE ON INSTALLATION:** All of the required components of Knative on a Minishift cluster, including software dependencies and configurations, can be installed by using the script provided by Red Hat in the OpenShift Cloud Functions `knative-operators` repository. The steps for manual installation are also included in this document to provide information about the steps completed by running the script, however the script installation method is recommended.
 
@@ -47,23 +47,21 @@ If you are running Minishift on your local machine, ensure that virtualization i
 
 See the Minishift documentation in [Additional resources](#additional-resources) for more information on installing a new Minishift instance.
 
-#### Installing dependencies for a new Minishift cluster
-
-> **IMPORTANT:** Docker and Kubernetes are also required to install and use Knative on a Minishift cluster, however these components are outside the scope of this documentation.
-
 ## Installing Knative on a Minishift cluster using install-on-minishift.sh
 
-1. Start Minishift.
+1. Clone the `knative-operators` repository.
 
-   `minishift start`  
+	`git clone git@github.com:openshift-cloud-functions/knative-operators.git`
 
-2. Clone the OLM repository.
+2. Make sure your Minishift instance is stopped
 
-   `git clone git@github.com:operator-framework/operator-lifecycle-manager.git`  
+	`minishift stop`
 
-3. Navigate to the newly cloned repository and run the `install-on-minishift.sh` script.
+3. Navigate to the newly cloned repository and run the install-on-minishift.sh script.
 
-   `./etc/scripts/install-on-minishift.sh`  
+	`./etc/scripts/install-on-minishift.sh`
+
+> **IMPORTANT:** `install-on-minishift.sh` is destructive. It will destroy any existing Knative profile and create a new one with known-to-work configuration.
 
 ## Installing Knative on a Minishift cluster manually
 
@@ -73,16 +71,39 @@ See the Minishift documentation in [Additional resources](#additional-resources)
 
 2. Clone the OLM repository.
 
-	    `git clone git@github.com:operator-framework/operator-lifecycle-manager.git`  
+	 `git clone git@github.com:operator-framework/operator-lifecycle-manager.git`  
 
 3. Set the required environment variables.
 
-	 	 `eval $(minishift oc-env)`  
-	 	 `eval $(minishift docker-env)`  
+   `eval $(minishift oc-env)`   
+	 `eval $(minishift docker-env)`  
 
 4. Login as administrator.
 
-	 	`oc login -u system:admin`  
+   `oc login -u system:admin`  
+
+5. Enable admission webhooks.
+
+ 		minishift openshift config set --target=kube --patch '{
+        	"admissionConfig": {
+          	"pluginConfig": {
+            	"ValidatingAdmissionWebhook": {
+              	"configuration": {
+                	"apiVersion": "apiserver.config.k8s.io/v1alpha1",
+                	"kind": "WebhookAdmission",
+                	"kubeConfigFile": "/dev/null"
+              	}
+            	},
+            	"MutatingAdmissionWebhook": {
+              	"configuration": {
+                	"apiVersion": "apiserver.config.k8s.io/v1alpha1",
+                	"kind": "WebhookAdmission",
+                	"kubeConfigFile": "/dev/null"
+									}
+								}
+							}
+						}
+					}'
 
 ### Configuring Minishift for Knative
 
@@ -198,3 +219,4 @@ Install the `knative-operators` catalog source.
 ## Additional resources
 * For more information about installing Minishift, see the [Minishift documentation](https://docs.okd.io/latest/minishift/getting-started/installing.html).
 * For more information about installing libvirt and qemu-kvm, see the documentation [here](https://docs.okd.io/latest/minishift/getting-started/setting-up-virtualization-environment.html).
+* When running OpenShift in a single VM, you can reuse the Docker daemon managed by Minishift for other Docker use cases- see the documentation [here](https://docs.okd.io/latest/minishift/using/docker-daemon.html).
