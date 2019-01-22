@@ -71,18 +71,18 @@ See the Minishift documentation in [Additional resources](#additional-resources)
 
    `minishift start`  
 
-2. Login as administrator.
+2. Clone the OLM repository.
+
+	    `git clone git@github.com:operator-framework/operator-lifecycle-manager.git`  
+
+3. Set the required environment variables.
+
+	 	 `eval $(minishift oc-env)`  
+	 	 `eval $(minishift docker-env)`  
+
+4. Login as administrator.
 
 	 	`oc login -u system:admin`  
-
-3. Clone the OLM repository.
-
-   `git clone git@github.com:operator-framework/operator-lifecycle-manager.git`  
-
-4. Set the required environment variables.
-
-	 `eval $(minishift oc-env)`  
-	 `eval $(minishift docker-env)`  
 
 ### Configuring Minishift for Knative
 
