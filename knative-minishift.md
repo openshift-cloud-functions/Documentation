@@ -53,15 +53,36 @@ See the Minishift documentation in [Additional resources](#additional-resources)
 
 ## Installing Knative on a Minishift cluster using install-on-minishift.sh
 
-1. Clone the `knative-operators` repository.
+1. Start Minishift.
 
-   `$ git clone git@github.com:openshift-cloud-functions/knative-operators.git`  
+   `minishift start`  
 
-2. Navigate to the newly cloned repository and run the `install-on-minishift.sh` script.
+2. Clone the OLM repository.
 
-   `$ ./etc/scripts/install-on-minishift.sh`  
+   `git clone git@github.com:operator-framework/operator-lifecycle-manager.git`  
+
+3. Navigate to the newly cloned repository and run the `install-on-minishift.sh` script.
+
+   `./etc/scripts/install-on-minishift.sh`  
 
 ## Installing Knative on a Minishift cluster manually
+
+1. Start Minishift.
+
+   `minishift start`  
+
+2. Login as administrator.
+
+	 	`oc login -u system:admin`  
+
+3. Clone the OLM repository.
+
+   `git clone git@github.com:operator-framework/operator-lifecycle-manager.git`  
+
+4. Set the required environment variables.
+
+	 `eval $(minishift oc-env)`  
+	 `eval $(minishift docker-env)`  
 
 ### Configuring Minishift for Knative
 
@@ -78,24 +99,7 @@ You will need to set the correct configuration before starting Minishift. You ca
 
 ### Installing Operator Lifecycle Manager (OLM)
 
-1. Start Minishift.
-
-   `minishift start`  
-
-2. Clone the OLM repository.
-
-   `git clone git@github.com:operator-framework/operator-lifecycle-manager.git`  
-
-3. Set the required environment variables.
-
-	 `eval $(minishift oc-env)`  
-	 `eval $(minishift docker-env)`  
-
-4. Login as administrator.
-
-	`oc login -u system:admin`  
-
-5. Navigate to the `operator-lifecycle-manager` directory and install the latest OLM release using the following command.
+Navigate to the `operator-lifecycle-manager` directory and install the latest OLM release using the following command.
 
    `oc create -f deploy/okd/manifests/latest/`  
 
