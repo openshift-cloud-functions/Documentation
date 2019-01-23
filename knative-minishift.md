@@ -49,19 +49,22 @@ See the Minishift documentation in [Additional resources](#additional-resources)
 
 ## Installing Knative on a Minishift cluster using install-on-minishift.sh
 
+> **IMPORTANT:** `install-on-minishift.sh` is destructive. It will destroy any existing Knative profile and create a new one with known-to-work configuration.
+
 1. Clone the `knative-operators` repository.
 
-	`git clone git@github.com:openshift-cloud-functions/knative-operators.git`
+   `git clone https://github.com/openshift-cloud-functions/knative-operators`   
+   `cd knative-operators/`   
+	 `git fetch --tags`   
+	 `git checkout openshift-v0.2.0`
 
-2. Make sure your Minishift instance is stopped
+2. Confirm that your Minishift instance has been stopped.
 
 	`minishift stop`
 
 3. Navigate to the newly cloned repository and run the install-on-minishift.sh script.
 
 	`./etc/scripts/install-on-minishift.sh`
-
-> **IMPORTANT:** `install-on-minishift.sh` is destructive. It will destroy any existing Knative profile and create a new one with known-to-work configuration.
 
 ## Installing Knative on a Minishift cluster manually
 
