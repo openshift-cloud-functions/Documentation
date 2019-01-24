@@ -2,22 +2,7 @@
 Developer Preview
 ------
 
-<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
-
-- [Knative on an OpenShift cluster](#knative-on-an-openshift-cluster)
-	- [Prerequisites](#prerequisites)
-		- [Supported platform versions](#supported-platform-versions)
-	- [Installing Knative on an OpenShift cluster using the script provided (recommended)](#installing-knative-on-an-openshift-cluster-using-the-script-provided-recommended)
-	- [Summary of installation steps](#summary-of-installation-steps)
-	- [Post-installation tasks](#post-installation-tasks)
-		- [Allowing external access to Knative services using a configured hostname.](#allowing-external-access-to-knative-services-using-a-configured-hostname)
-	- [Additional resources](#additional-resources)
-
-<!-- /TOC -->
-
 > **IMPORTANT:** The functionality introduced by Knative on an OpenShift cluster is developer preview only. Red Hat support is not provided, and this release should not be used in a production environment.
-
-> **NOTE ON INSTALLATION:** All of the required components of Knative on an OpenShift cluster, including software dependencies and configurations, can be installed by using the script provided by Red Hat in the OpenShift Cloud Functions `knative-operators` repository. The steps for manual installation are also included in this document to provide information about the steps completed by running the script, however the script installation method is recommended.
 
 ## Prerequisites
 
@@ -29,9 +14,7 @@ Developer Preview
 | ------------- |:-------------:|
 | OpenShift      | 3.11		|
 
-> **IMPORTANT:** Docker and Kubernetes are also required to install and use Knative on an OpenShift cluster, however these components are outside the scope of this documentation.
-
-## Installing Knative on an OpenShift cluster using the script provided (recommended)
+## Installing Knative on an OpenShift cluster using the script provided
 
 1. Login to the cluster using your admin credentials.
 
@@ -64,23 +47,6 @@ Developer Preview
 
    Press Enter to continue.
    
-## Summary of installation steps
-
-If you wish to install Knative on an OpenShift cluster manually (without using the script), you will need to complete the following steps which are currently included in `install.sh`.
-
-1. Enable admission webhooks
-2. Install OLM
-3. Install Istio
-4. Install Knative components (Knative Build, Knative Serving, Knative Eventing and Operator groups).
-5. Skip tag resolution for internal registry.
-
-   `oc -n knative-serving get cm config-controller -oyaml | sed "s/\(^ *registriesSkippingTagResolving.*$\)/\1,docker-registry.default.svc:5000/" | oc apply -f -`   
-   
-6. Add image streams to build images.
-7. Add required Istio permissions.
-
-   `oc adm policy add-scc-to-user privileged -z default`   
-   `oc adm policy add-scc-to-user anyuid -z default`   
 
 ## Post-installation tasks
 
