@@ -23,14 +23,14 @@ If you are running Minishift on your local machine, ensure that virtualization i
 
 ## Installing Knative on a Minishift cluster using install-on-minishift.sh
 
-> **IMPORTANT:** `install-on-minishift.sh` is destructive. It will destroy any the existing `knative` profile and recreate it with known-to-work configuration.
+> **IMPORTANT:** `install-on-minishift.sh` is destructive. It will destroy the existing `knative` profile and recreate it with known-to-work configuration.
 
 1. Clone the `knative-operators` repository.
 
    `git clone https://github.com/openshift-cloud-functions/knative-operators`   
    `cd knative-operators/`   
-	 `git fetch --tags`   
-	 `git checkout openshift-v0.2.0`
+   `git fetch --tags`   
+   `git checkout openshift-v0.2.0`
 
 2. Confirm that your Minishift instance has been stopped.
 
