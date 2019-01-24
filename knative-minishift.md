@@ -25,7 +25,7 @@ If you are running Minishift on your local machine, ensure that virtualization i
 
 ## Installing Knative on a Minishift cluster using install-on-minishift.sh
 
-> **IMPORTANT:** `install-on-minishift.sh` is destructive. It will destroy any existing Knative profile and create a new one with known-to-work configuration.
+> **IMPORTANT:** `install-on-minishift.sh` is destructive. It will destroy any the existing `knative` profile and recreate it with known-to-work configuration.
 
 1. Clone the `knative-operators` repository.
 
