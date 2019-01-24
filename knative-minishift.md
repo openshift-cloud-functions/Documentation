@@ -2,27 +2,6 @@
 Preview
 ------
 
-<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
-
-- [Knative on a Minishift cluster](#knative-on-a-minishift-cluster)
-	- [Prerequisites](#prerequisites)
-		- [Supported platform versions](#supported-platform-versions)
-		- [Resource requirements](#resource-requirements)
-		- [Installing Minishift](#installing-minishift)
-			- [Installing dependencies for a new Minishift cluster](#installing-dependencies-for-a-new-minishift-cluster)
-	- [Installing Knative on a Minishift cluster using install-on-minishift.sh](#installing-knative-on-a-minishift-cluster-using-install-on-minishiftsh)
-	- [Installing Knative on a Minishift cluster manually](#installing-knative-on-a-minishift-cluster-manually)
-		- [Configuring Minishift for Knative](#configuring-minishift-for-knative)
-		- [Installing Operator Lifecycle Manager (OLM)](#installing-operator-lifecycle-manager-olm)
-		- [Installing Istio add-on for Minishift](#installing-istio-add-on-for-minishift)
-		- [Installing Knative on Minishift](#installing-knative-on-minishift)
-			- [Installing Knative build](#installing-knative-build)
-			- [Installing Knative serving](#installing-knative-serving)
-			- [Installing Knative eventing](#installing-knative-eventing)
-	- [Additional resources](#additional-resources)
-
-<!-- /TOC -->
-
 > **IMPORTANT:** The functionality introduced by  is preview only. Red Hat support is not provided, and this release should not be used in a production environment.
 
 > **NOTE ON INSTALLATION:** All of the required components of Knative on a Minishift cluster, including software dependencies and configurations, can be installed by using the script provided by Red Hat in the OpenShift Cloud Functions `knative-operators` repository. The steps for manual installation are also included in this document to provide information about the steps completed by running the script, however the script installation method is recommended.
