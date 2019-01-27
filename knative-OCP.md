@@ -22,7 +22,10 @@ Developer Preview
    
 2. Clone the `knative-operators` repository.
 
-   `git clone git@github.com:openshift-cloud-functions/knative-operators.git`  
+   `git clone https://github.com/openshift-cloud-functions/knative-operators`   
+   `cd knative-operators/`   
+   `git fetch --tags`   
+   `git checkout openshift-v0.2.0`   
 
 3. Set the following SSH properties using your OpenShift cluster credentials.
 
