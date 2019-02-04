@@ -1,0 +1,7 @@
+= Knative on OpenShift developer preview documentation
+
+// Knative on a Minishift cluster
+include::assembly_knative-minishift.adoc[leveloffset=+1]
+
+// Knative on an Openshift cluster
+include::assembly_knative-OCP.adoc[leveloffset=+1]

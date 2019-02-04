@@ -1,0 +1,50 @@
+// The following module is included in the following assembly:
+//
+// assembly_knative-OCP.adoc
+
+[id='install-knative-OCP-using-script-{context}']
+== Installing Knative on an OpenShift cluster using the script provided
+Use a script to install Knative on a Minishift cluster.
+
+.Prerequisites
+* You will need cluster administrator privileges to install and use Knative on an OpenShift cluster.
+
+
+.Procedure
+. Login to the cluster using your admin credentials.
+
+   `oc login <admin-credentials>`
+   
+. Clone the `knative-operators` repository.
+
+   `git clone https://github.com/openshift-cloud-functions/knative-operators`   
+   `cd knative-operators/`   
+   `git fetch --tags`   
+   `git checkout openshift-v0.2.0`   
+
+. Set the following SSH properties using your OpenShift cluster credentials.
+
+   `export KUBE_SSH_USER=<username>`   
+   `export KUBE_SSH_KEY=<path-to-private-ssh-key>`   
+
+. Navigate to the newly cloned repository and run the `install.sh` script.
+
+   `./etc/scripts/install.sh`  
+
+
+NOTE: The installation script takes around 20-30 minutes to complete, depending on your system.
+
+
+[start=5]
+. Once the script starts, you will see the following warning and prompt.
+
+   `WARNING: This script will blindly attempt to install OLM, istio, and knative on your OpenShift cluster, so if   any are already there, hijinks may ensue.`
+
+   `If your cluster isn't minishift, ensure $KUBE_SSH_KEY and $KUBE_SSH_USER are set`   
+
+   `Pass -q to disable this warning`   
+
+   `Enter to continue or Ctrl-C to exit:`   
+
+. Press Enter to continue.
+   

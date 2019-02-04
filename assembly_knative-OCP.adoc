@@ -1,0 +1,17 @@
+// This assembly is included in the following assemblies:
+//
+// master.adoc
+
+
+[id='knative-OCP-{context}']
+= Knative on an OpenShift cluster
+
+// Knative on OpenShift cluster overview
+include::con_knative-OCP.adoc[leveloffset=+1]
+
+// Installing Knative on a Minishift cluster using `install-on-minishift.sh`
+include::proc_install-knative-OCP.adoc[leveloffset=+1] 
+
+// Allowing external access to Knative services using a configured hostname (post-installation tasks)
+include::proc_post-install-OCP.adoc[leveloffset=+1] 
+
