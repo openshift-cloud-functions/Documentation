@@ -12,7 +12,7 @@ Preview
 
 | Platform        | Supported versions           |
 | ------------- |:-------------:|
-| OpenShift      | 3.11		|
+| OpenShift      | 4.0		|
 
 ## Installing Knative on an OpenShift cluster using the script provided
 
@@ -49,7 +49,3 @@ Preview
    `Enter to continue or Ctrl-C to exit:`   
 
    Press Enter to continue.
-   
-## Additional resources
-
-* For more information about default routing subdomains, see [OpenShift documentation](https://docs.openshift.com/enterprise/3.0/install_config/install/deploy_router.html#customizing-the-default-routing-subdomain).
