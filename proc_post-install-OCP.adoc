@@ -2,10 +2,11 @@
 //
 // assembly_knative-OCP.adoc
 
-== Post-installation tasks
+= Post-installation tasks
 Use a configured hostname to access Knative services.
 
-=== Allowing external access to Knative services using a configured hostname.
+== Allowing external access to Knative services using a configured hostname.
+
 By default, Knative services are not accessible outside the OpenShift cluster. You can enable access by configuring a hostname. This method uses wildcard routing to automatically assign a hostname.
 
 
