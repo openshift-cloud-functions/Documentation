@@ -3,8 +3,11 @@
 // assembly_knative-OCP.adoc
 
 [id='install-knative-OCP-using-script-{context}']
-== Installing Knative on an OpenShift cluster using the script provided
+= Installing Knative on an OpenShift cluster using the script provided
+
 Use a script to install Knative on a Minishift cluster.
+
+IMPORTANT: The functionality introduced by Knative on an OpenShift cluster is developer preview only. Red Hat support is not provided, and this release should not be used in a production environment.
 
 .Prerequisites
 * You will need cluster administrator privileges to install and use Knative on an OpenShift cluster.
