@@ -1,5 +1,4 @@
 # Knative on an OpenShift cluster
-Preview
 ------
 
 > **IMPORTANT:** The functionality introduced by Knative on an OpenShift cluster is preview only. Red Hat support is not provided, and this release should not be used in a production environment.
@@ -10,9 +9,11 @@ Preview
 
 ### Supported platform versions
 
+> **NOTE:** This Knative on OpenShift preview is only available via the OpenShift 4.0 developer preview. You will require a Red Hat Developers login to try this. Visit [try.openshift.com](https://try.openshift.com/) for getting started information.
+
 | Platform        | Supported versions           |
 | ------------- |:-------------:|
-| OpenShift      | 4.0		|
+| OpenShift      | [4.0 Developer Preview](https://try.openshift.com/)		|
 
 ## Installing Knative on an OpenShift cluster using the script provided
 
