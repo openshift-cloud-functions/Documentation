@@ -13,4 +13,4 @@ include::con_knative-OCP-311.adoc[leveloffset=+1]
 include::proc_installing-knative-OCP-311.adoc[leveloffset=+1] 
 
 // Allowing external access to Knative services using a configured hostname (post-installation tasks)
-include::proc_allowing-external-access-knative-services-OCP-311.adoc
+include::proc_allowing-external-access-knative-services-OCP-311.adoc[leveloffset=+1] 
