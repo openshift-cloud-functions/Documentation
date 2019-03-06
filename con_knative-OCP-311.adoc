@@ -8,7 +8,7 @@
 
 NOTE: The functionality introduced by Knative on an OpenShift cluster is developer preview only. Red Hat support is not provided, and this release should not be used in a production environment.
 
-All of the required components of Knative on an OpenShift cluster, including software dependencies and configurations, can be installed by using the script provided by Red Hat in the OpenShift Cloud Functions `knative-operators` repository. The script installation method is recommended.
+The script installation method is recommended.
 
 
 === Supported platform version
