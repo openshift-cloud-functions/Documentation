@@ -36,7 +36,7 @@
 
 4.  Once the script starts, you will see the following warning and prompt:
 
-    `This script will attempt to install Istio, Knative, and OLM in your Kubernetes/OpenShift cluster.`
+    `WARNING: This script will attempt to install Istio, Knative, and OLM in your Kubernetes/OpenShift cluster.`
     
     `If targeting OpenShift, a recent version of 'oc' should be available in your PATH. Otherwise, 'kubectl' will be used.`
 
