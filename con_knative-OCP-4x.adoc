@@ -2,7 +2,7 @@
 //
 // assembly_knative-OCP-4x.adoc
 
-
+[id='knative-ocp-4x_{context}']
 = Knative on an OpenShift 4.0 cluster
 
 == Developer Preview 
