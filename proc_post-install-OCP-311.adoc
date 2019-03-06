@@ -2,6 +2,8 @@
 //
 // assembly_knative-OCP-311.adoc
 
+
+[id='allowing-external-access-knative-services_{context}]
 = Allowing external access to Knative services
 
 Use a configured hostname to access Knative services.
