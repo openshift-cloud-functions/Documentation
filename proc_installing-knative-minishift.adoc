@@ -2,6 +2,7 @@
 //
 // assembly_knative-minishift.adoc
 
+
 [id='installing-knative-minishift_{context}']
 = Installing Knative on a Minishift cluster using a script
 

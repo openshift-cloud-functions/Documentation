@@ -8,6 +8,7 @@
 
 NOTE: This Knative on OpenShift preview is only available by using the OpenShift 4.0 developer preview. 
 
+
 .Prerequisites
 * You will require a Red Hat Developers login to try this. 
 * Using 4.0 clusters with Knative requires visiting link:https://try.openshift.com/[try.openshift.com]
@@ -26,26 +27,24 @@ NOTE: This Knative on OpenShift preview is only available by using the OpenShift
    `git fetch --tags`   
    `git checkout openshift-v0.3.0`   
 
-. Set the following SSH properties using your OpenShift cluster credentials.
-
-   `export KUBE_SSH_USER=<username>`   
-   `export KUBE_SSH_KEY=<path-to-private-ssh-key>`   
-
 . Navigate to the newly cloned repository and run the `install.sh` script.
 
    `./etc/scripts/install.sh`  
 
-NOTE: The installation script takes around 20-30 minutes to complete, depending on your system.
+NOTE: The installation script takes 20-30 minutes to complete, depending on your system.
 
-[start=5]
-. Once the script starts, you will see the following warning and prompt.
+[start=4]
+. Once the script starts, you will see the following warning and prompt:
 
-   `WARNING: This script will blindly attempt to install OLM, istio, and knative on your OpenShift cluster, so if   any are already there, hijinks may ensue.`
+    `WARNING: This script will attempt to install Istio, Knative, and OLM in your Kubernetes/OpenShift cluster.`
+    
+    `If targeting OpenShift, a recent version of 'oc' should be available in your PATH. Otherwise, 'kubectl' will be used.`
 
-   `If your cluster isn't minishift, ensure $KUBE_SSH_KEY and $KUBE_SSH_USER are set`   
+    `If using OpenShift 3.11 and your cluster isn't minishift, ensure \$KUBE_SSH_KEY and \$KUBE_SSH_USER are set`
 
-   `Pass -q to disable this warning`   
-
-   `Enter to continue or Ctrl-C to exit:`   
+    `Pass -q to disable this prompt`
+ 
+    `Enter to continue or Ctrl-C to exit:`
 
 . Press Enter to continue.
+

@@ -4,7 +4,7 @@
 
 
 [id='allowing-external-access-knative-services_{context}]
-=Allowing external access to Knative services
+= Allowing external access to Knative services
 
 Use a configured hostname to access Knative services.
 
@@ -62,3 +62,9 @@ NOTE: This route requires one host per namespace, which runs Knative services. T
 . View the domain that was assigned to the application. You can now access the demo application using this domain.
 
    `oc get service.serving.knative.dev/dumpy`   
+
+
+
+.Additional resources
+
+* For more information about default routing subdomains, see link:https://docs.openshift.com/enterprise/3.0/install_config/install/deploy_router.html#customizing-the-default-routing-subdomain[OpenShift documentation].
