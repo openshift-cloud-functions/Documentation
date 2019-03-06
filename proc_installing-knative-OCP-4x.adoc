@@ -36,7 +36,7 @@ NOTE: The installation script takes 20-30 minutes to complete, depending on your
 [start=4]
 . Once the script starts, you will see the following warning and prompt:
 
-    `This script will attempt to install Istio, Knative, and OLM in your Kubernetes/OpenShift cluster.`
+    `WARNING: This script will attempt to install Istio, Knative, and OLM in your Kubernetes/OpenShift cluster.`
     
     `If targeting OpenShift, a recent version of 'oc' should be available in your PATH. Otherwise, 'kubectl' will be used.`
 
@@ -47,3 +47,4 @@ NOTE: The installation script takes 20-30 minutes to complete, depending on your
     `Enter to continue or Ctrl-C to exit:`
 
 . Press Enter to continue.
+
