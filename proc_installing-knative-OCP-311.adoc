@@ -2,7 +2,7 @@
 //
 // assembly_knative-OCP-311.adoc
 
-[id='install-knative-OCP-using-script-{context}']
+[id='installing-knative-OCP-using-script-311_{context}']
 = Installing Knative on an OpenShift cluster 3.11 using the script provided
 
 Use a script to install Knative on a Minishift cluster.
