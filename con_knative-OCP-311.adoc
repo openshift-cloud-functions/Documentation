@@ -2,6 +2,7 @@
 //
 // assembly_knative-OCP-311.adoc
 
+
 [id='knative-ocp-311_{context}']
 = Knative on an OpenShift cluster
 
