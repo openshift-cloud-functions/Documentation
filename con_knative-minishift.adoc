@@ -2,10 +2,9 @@
 //
 // assembly_knative-minishift.adoc
 
+
 [id='knative-minishift-{context}']
 = Knative on a Minishift cluster
-
-== Developer Preview 0.3.0
 
 NOTE: The functionality introduced is developer preview only. Red Hat support is not provided, and this release should not be used in a production environment.
 
