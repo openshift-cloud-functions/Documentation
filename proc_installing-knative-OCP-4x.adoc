@@ -26,18 +26,13 @@ NOTE: This Knative on OpenShift preview is only available by using the OpenShift
    `git fetch --tags`   
    `git checkout openshift-v0.3.0`   
 
-. Set the following SSH properties using your OpenShift cluster credentials.
-
-   `export KUBE_SSH_USER=<username>`   
-   `export KUBE_SSH_KEY=<path-to-private-ssh-key>`   
-
 . Navigate to the newly cloned repository and run the `install.sh` script.
 
    `./etc/scripts/install.sh`  
 
-NOTE: The installation script takes around 20-30 minutes to complete, depending on your system.
+NOTE: The installation script takes 20-30 minutes to complete, depending on your system.
 
-[start=5]
+[start=4]
 . Once the script starts, you will see the following warning and prompt.
 
    `WARNING: This script will blindly attempt to install OLM, istio, and knative on your OpenShift cluster, so if   any are already there, hijinks may ensue.`

@@ -28,18 +28,13 @@
    `git fetch --tags`   
    `git checkout openshift-v0.3.0`   
 
-3. Set the following SSH properties using your OpenShift cluster credentials.
-
-   `export KUBE_SSH_USER=<username>`   
-   `export KUBE_SSH_KEY=<path-to-private-ssh-key>`   
-
-4. Navigate to the newly cloned repository and run the `install.sh` script.
+3. Navigate to the newly cloned repository and run the `install.sh` script.
 
    `./etc/scripts/install.sh`  
 
 >**NOTE** The installation script takes around 20-30 minutes to complete, depending on your system.
 
-5. Once the script starts, you will see the following warning and prompt.
+4. Once the script starts, you will see the following warning and prompt.
 
    `WARNING: This script will blindly attempt to install OLM, istio, and knative on your OpenShift cluster, so if   any are already there, hijinks may ensue.`
 
@@ -49,4 +44,4 @@
 
    `Enter to continue or Ctrl-C to exit:`   
 
-   Press Enter to continue.
+5. Press Enter to continue.
