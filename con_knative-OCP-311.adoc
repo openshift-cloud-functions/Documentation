@@ -18,4 +18,4 @@ The script installation method is recommended.
 | OpenShift    | 3.11
 |===
 
-NOTE: Installation of Docker and Kubernetes are required to use Knative on an OpenShift cluster. These components, however, are outside the scope of this documentation.
+NOTE: Installation of Docker and Kubernetes are required to use Knative on an OpenShift cluster. These components are outside the scope of this documentation.
