@@ -1,7 +1,7 @@
 
 
 
-= Knative on OpenShift developer preview documentation
+= Knative on OpenShift documentation
 
 // Knative on an Openshift 4.0 cluster 
 include::assembly_knative-OCP-4x.adoc[leveloffset=+1]
