@@ -1,4 +1,4 @@
-// This procedure is included in the following assemblies:
+// This module is included in the following assemblies:
 //
 // assembly_knative-OCP-4x.adoc
 
