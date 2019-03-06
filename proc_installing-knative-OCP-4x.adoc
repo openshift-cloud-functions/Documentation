@@ -2,6 +2,8 @@
 //
 // assembly_knative-OCP-4x.adoc
 
+
+[id='installing-knative-ocp-using-script-4x_{context}']
 = Installing Knative on an OpenShift cluster 4.0 using the script provided
 
 NOTE: This Knative on OpenShift preview is only available by using the OpenShift 4.0 developer preview. 
