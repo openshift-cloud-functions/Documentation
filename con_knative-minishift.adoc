@@ -1,6 +1,6 @@
 // This module is included in the following assemblies:
 //
-// assembly_knative-OCP.adoc
+// assembly_knative-minishift.adoc
 
 [id='knative-minishift-{context}']
 = Knative on a Minishift cluster
