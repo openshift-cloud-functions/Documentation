@@ -1,12 +1,12 @@
-//
+
 
 
 = Knative on OpenShift developer preview documentation
 
-// Knative on an Openshift cluster 4.0
+// Knative on an Openshift 4.0 cluster 
 include::assembly_knative-OCP-4x.adoc[leveloffset=+1]
 
-// Knative on an Openshift cluster 3.11
+// Knative on an Openshift 3.11 cluster 
 include::assembly_knative-OCP-311.adoc[leveloffset=+1]
 
 // Knative on a Minishift cluster
