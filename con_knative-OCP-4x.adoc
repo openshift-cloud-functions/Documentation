@@ -3,9 +3,9 @@
 // assembly_knative-OCP-4x.adoc
 
 
-= Knative on an OpenShift cluster
+= Knative on an OpenShift 4.0 cluster
 
-== Developer Preview 0.4.0
+== Developer Preview 
 
 NOTE: The functionality introduced by Knative on an OpenShift cluster is preview only. Red Hat support is not provided, and this release should not be used in a production environment.
 
@@ -16,7 +16,7 @@ You will need cluster administrator privileges to install and use Knative on an 
 [cols="50,50"]
 |===
 |** Platform**     | **Supported versions**   
-| OpenShift    | [4.0 Developer Preview]     
+| OpenShift    | 4.0 [Developer Preview]     
 |===
 
 
