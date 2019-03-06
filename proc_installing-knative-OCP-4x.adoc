@@ -10,6 +10,7 @@ NOTE: This Knative on OpenShift preview is only available by using the OpenShift
 
 .Prerequisites
 * You will require a Red Hat Developers login to try this. 
+* Using 4.0 clusters with Knative requires visiting link:https://try.openshift.com/[try.openshift.com]
 
 
 .Procedure 
