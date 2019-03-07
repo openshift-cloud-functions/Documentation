@@ -1,7 +1,7 @@
-//
-//
-//
+include::common/attributes.adoc[]
 
+:context:
+:includedir: common
 
 = Knative on OpenShift documentation
 
