@@ -1,4 +1,5 @@
 # Knative on OpenShift documentation
+[Github pages view - WIP](https://openshift-cloud-functions.github.io/Documentation/)
 
 ## Knative on OpenShift v0.3.0
 [Knative on an OpenShift 4.0 cluster](/knative-OCP-4x.md)
