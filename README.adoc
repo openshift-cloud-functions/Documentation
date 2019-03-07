@@ -7,7 +7,7 @@
 == Knative on OpenShift v0.3.0
 ifdef::env-github,backend-html5[]
   
-  <<assembly_knative-OCP-4x.adoc[]#, Knative on OpenShift 4.0 cluster>>::
+  <</assembly_knative-OCP-4x.adoc#, Knative on OpenShift 4.0 cluster>>::
   
 endif::[]
 
@@ -16,8 +16,8 @@ endif::[]
 == Knative on OpenShift v0.2.0
 ifdef::env-github,backend-html5[]
   
-  <<assembly_knative-OCP-3-11x.adoc[]#, Knative on OpenShift 3.11 cluster>>::
-  <<assembly_knative-minishift.adoc[]#, Knative on Minishift 1.25.0>>::
+  <</assembly_knative-OCP-311.adoc#, Knative on OpenShift 3.11 cluster>>::
+  <</assembly_knative-minishift.adoc#, Knative on Minishift 1.25.0>>::
 
 endif::[]
 
