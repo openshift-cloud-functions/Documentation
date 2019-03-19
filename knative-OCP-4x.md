@@ -9,7 +9,7 @@
 
 ### Supported platform versions
 
-> **NOTE:** This Knative on OpenShift preview is only available via the OpenShift 4.0 developer preview. You will require a Red Hat Developers login to try this. Visit [try.openshift.com](https://try.openshift.com/) for getting started information.
+> **NOTE:** This Knative on OpenShift preview is only available by using the OpenShift 4.0 developer preview. You will require a Red Hat Developers login to try this. Visit [try.openshift.com](https://try.openshift.com/) for getting started information.
 
 | Platform        | Supported versions           |
 | ------------- |:-------------:|
@@ -48,3 +48,43 @@
     `Enter to continue or Ctrl-C to exit:`
 
 5. Press Enter to continue.
+
+
+## Post-installation tasks: Allowing external access to Knative services for OCP 4.0
+
+### Updating Knative's config-domain ConfigMap and replacing "example.com" with your domain's suffix.
+
+>**NOTE**: This will not be needed once the new operator capabilities are enabled to set the value automatically.
+
+1. Find out your cluster's domain suffix <YOUR CLUSTER SUFFIX> with the following command.
+
+   `oc get ingresses.config.openshift.io cluster -o jsonpath="{.spec.domain}"`
+   
+2. Edit Knative's config-domain ConfigMap and replace "example.com" with <YOUR CLUSTER SUFFIX>
+
+   `oc edit configmap config-domain -n knative-serving`
+   
+   
+### Creating an OpenShift Route pointing to the istio-ingressgateway for each of your Knative Service. 
+
+1. Create a yaml file, "my-route.yaml" with the following contents:  
+ * Replace <YOUR KNATIVE SERVICE NAME> with your knative service name; 
+ * Replace <YOUR NAMESPACE> with your service's namespace;
+ * Replace <YOUR CLUSTER SUFFIX> with the value output by the `oc get` command in the previous step.
+
+         apiVersion: v1
+          kind: Route
+          metadata:
+            name: <YOUR KNATIVE SERVICE NAME>
+            namespace: istio-system
+          spec:
+            host: <YOUR KNATIVE SERVICE NAME>.<YOUR NAMESPACE>.<YOUR CLUSTER SUFFIX>
+            to:
+              kind: Service
+              name: istio-ingressgateway
+
+2. Run the following yaml file command:
+
+   `oc apply -f my-route.yaml` 
+   
+>**NOTE**: If you previously deployed your Knative Services, you will need to redeploy them for the changes to the domain ConfgMap to take effect.
