@@ -1,0 +1,48 @@
+// This module is included in the following assemblies:
+//
+// assembly_knative-OCP-4x.adoc
+
+
+[id='allowing-external-access-knative-services-OCP-4x_{context}]
+= Allowing external access to Knative services on OCP 4.0
+
+Use a configured hostname to access Knative services on the OpenShift 4.0 cluster
+
+.Procedure
+
+. Updating Knative's config-domain ConfigMap and replacing "example.com" with your domain's suffix.
+
+NOTE: This will not be needed once the new operator capabilities are enabled to set the value automatically.
+
+.. Find out your cluster's domain suffix <YOUR CLUSTER SUFFIX> with the following command.
+
+   `oc get ingresses.config.openshift.io cluster -o jsonpath="{.spec.domain}"`
+   
+.. Edit Knative's config-domain ConfigMap and replace "example.com" with <YOUR CLUSTER SUFFIX>
+
+   `oc edit configmap config-domain -n knative-serving`
+
+[start=2]
+. Creating an OpenShift Route pointing to the istio-ingressgateway for each of your Knative Service. 
+
+.. Create a yaml file, "my-route.yaml" with the following contents:  
+... Replace <YOUR KNATIVE SERVICE NAME> with your knative service name; 
+... Replace <YOUR NAMESPACE> with your service's namespace;
+... Replace <YOUR CLUSTER SUFFIX> with the value output by the `oc get` command in the previous step.
+
+         apiVersion: v1
+          kind: Route
+          metadata:
+            name: <YOUR KNATIVE SERVICE NAME>
+            namespace: istio-system
+          spec:
+            host: <YOUR KNATIVE SERVICE NAME>.<YOUR NAMESPACE>.<YOUR CLUSTER SUFFIX>
+            to:
+              kind: Service
+              name: istio-ingressgateway
+
+.. Run the following yaml file command:
+
+   `oc apply -f my-route.yaml` 
+   
+NOTE: If you previously deployed your Knative Services, you will need to redeploy them for the changes to the domain ConfgMap to take effect.
