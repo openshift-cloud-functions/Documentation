@@ -30,16 +30,16 @@ NOTE: This will not be needed once the new operator capabilities are enabled to 
 ... Replace <YOUR NAMESPACE> with your service's namespace;
 ... Replace <YOUR CLUSTER SUFFIX> with the value output by the `oc get` command in the previous step.
 
-         apiVersion: v1
-          kind: Route
-          metadata:
-            name: <YOUR KNATIVE SERVICE NAME>
-            namespace: istio-system
-          spec:
-            host: <YOUR KNATIVE SERVICE NAME>.<YOUR NAMESPACE>.<YOUR CLUSTER SUFFIX>
-            to:
-              kind: Service
-              name: istio-ingressgateway
+  apiVersion: v1
+ kind: Route
+ metadata:
+   name: <YOUR KNATIVE SERVICE NAME>
+   namespace: istio-system
+ spec:
+   host: <YOUR KNATIVE SERVICE NAME>.<YOUR NAMESPACE>.<YOUR CLUSTER SUFFIX>
+   to:
+     kind: Service
+     name: istio-ingressgateway
 
 .. Run the following yaml file command:
 
