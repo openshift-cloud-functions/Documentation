@@ -2,6 +2,7 @@
 //
 // master.adoc
 
+
 [id='knative-ocp-4x_{context}']
 = Knative on an OpenShift cluster 4.0
 
@@ -10,3 +11,6 @@ include::common/con_knative-OCP-4x.adoc[leveloffset=+1]
 
 // Installing Knative on an OpenShift cluster 4.0 using the script provided
 include::common/proc_installing-knative-OCP-4x.adoc[leveloffset=+1] 
+
+// Allowing external access to Knative services using a configured hostname OCP 4.0
+include::common/assembly_allowing-external-access-knative-services-OCP-4x.adoc[leveloffset=+1]
