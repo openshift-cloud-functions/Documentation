@@ -2,6 +2,10 @@
 //
 // master.adoc
 
+include::common/attributes.adoc[]
+
+:context:
+:includedir: common
 
 [id='knative-ocp-4x_{context}']
 = Knative on an OpenShift cluster 4.0
