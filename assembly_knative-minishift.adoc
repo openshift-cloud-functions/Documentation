@@ -2,6 +2,10 @@
 //
 // master.adoc
 
+include::common/attributes.adoc[]
+
+:context:
+:includedir: common
 
 [id='knative-minishift_{context}']
 = Knative on a Minishift cluster
