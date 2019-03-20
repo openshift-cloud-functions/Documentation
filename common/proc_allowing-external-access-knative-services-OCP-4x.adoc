@@ -16,7 +16,7 @@ Use a configured hostname to access Knative services on the OpenShift 4.0 cluste
 
    `oc get ingresses.config.openshift.io cluster -o jsonpath="{.spec.domain}"`
    
-.. Edit Knative's config-domain ConfigMap and replace "example.com" with <YOUR CLUSTER SUFFIX>
+.. Edit Knative's config-domain ConfigMap and replace "example.com" with <YOUR CLUSTER SUFFIX> by using the following command:
 
    `oc edit configmap config-domain -n knative-serving`
 
