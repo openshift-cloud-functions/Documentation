@@ -71,7 +71,7 @@ Your Knative services will not be accessible from outside of the OpenShift clust
 5. Create a route that forwards wildcard traffic to the `knative-ingressgateway`.
    > **NOTE:** This route requires one host per namespace that is running Knative services. The format for the host of the route is `wildcard.<namespace>.<default-routing-subdomain>`.
 
-  To do this, you must create a wildcard yaml file (in our example this is named `wildcard-routes.yml`) with the following contents.
+  To do this, you must create a wildcard yaml file (in our example this is named `wildcard-routes.yml`) with the following content:
 
     apiVersion: route.openshift.io/v1
     kind: Route
