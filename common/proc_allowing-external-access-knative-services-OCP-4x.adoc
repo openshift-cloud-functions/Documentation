@@ -12,8 +12,6 @@ Use a configured hostname to access Knative services on the OpenShift 4.0 cluste
 
 . Updating Knative's config-domain ConfigMap and replacing "example.com" with your domain's suffix.
 
-NOTE: This will not be needed once the new operator capabilities are enabled to set the value automatically.
-
 .. Find out your cluster's domain suffix <YOUR CLUSTER SUFFIX> with the following command.
 
    `oc get ingresses.config.openshift.io cluster -o jsonpath="{.spec.domain}"`
