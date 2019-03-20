@@ -1,4 +1,4 @@
-# Knative on an OpenShift cluster
+# Knative on an OpenShift 3.11 cluster
 Developer Preview
 ------
 
