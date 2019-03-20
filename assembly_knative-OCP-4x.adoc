@@ -7,7 +7,7 @@
 = Knative on an OpenShift cluster 4.0
 
 // Knative on OpenShift cluster overview
-include:con_knative-OCP-4x.adoc[leveloffset=+1]
+include::con_knative-OCP-4x.adoc[leveloffset=+1]
 
 // Installing Knative on an OpenShift cluster 4.0 using the script provided
 include::proc_installing-knative-OCP-4x.adoc[leveloffset=+1] 
