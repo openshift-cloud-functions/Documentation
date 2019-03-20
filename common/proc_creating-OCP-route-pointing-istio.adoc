@@ -1,0 +1,32 @@
+// This module is included in the following assemblies:
+//
+// assembly_allowing-external-access-knative-services-OCP-4x.adoc
+
+
+[id='creating-OCP-route-pointing-istio_{context}']
+= Creating an OpenShift Route pointing to the istio-ingressgateway for each of your Knative Service. 
+
+
+.Procedure
+
+. Create a yaml file, "my-route.yaml" with the following contents:  
+.. Replace <YOUR KNATIVE SERVICE NAME> with your knative service name; 
+.. Replace <YOUR NAMESPACE> with your service's namespace;
+.. Replace <YOUR CLUSTER SUFFIX> with the value output by the `oc get` command in the previous step.
+
+        apiVersion: v1
+        kind: Route
+        metadata:
+        name: <YOUR KNATIVE SERVICE NAME>
+        namespace: istio-system
+        spec:
+        host: <YOUR KNATIVE SERVICE NAME>.<YOUR NAMESPACE>.<YOUR CLUSTER SUFFIX>
+        to:
+            kind: Service
+            name: istio-ingressgateway
+
+. Run the following yaml file command:
+
+   `oc apply -f my-route.yaml` 
+   
+NOTE: If you previously deployed Knative Services, you will need to redeploy them for the changes to the domain ConfgMap to take effect.
