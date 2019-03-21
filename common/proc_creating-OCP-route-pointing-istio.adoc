@@ -16,16 +16,16 @@
 
 +
 ----
-        apiVersion: v1
-        kind: Route
-        metadata:
-        name: <YOUR KNATIVE SERVICE NAME>
-        namespace: istio-system
-        spec:
-        host: <YOUR KNATIVE SERVICE NAME>.<YOUR NAMESPACE>.<YOUR CLUSTER SUFFIX>
-        to:
-            kind: Service
-            name: istio-ingressgateway
+    apiVersion: v1
+    kind: Route
+      metadata:
+      name: <YOUR KNATIVE SERVICE NAME>
+      namespace: istio-system
+    spec:
+      host: <YOUR KNATIVE SERVICE NAME>.<YOUR NAMESPACE>.<YOUR CLUSTER SUFFIX>
+      to:
+        kind: Service
+        name: istio-ingressgateway
 ----
 
 . Run the following yaml file command:
