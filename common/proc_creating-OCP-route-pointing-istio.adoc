@@ -13,9 +13,10 @@
 .. Replace <YOUR KNATIVE SERVICE NAME> with your knative service name; 
 .. Replace <YOUR NAMESPACE> with your service's namespace;
 .. Replace <YOUR CLUSTER SUFFIX> with the value output by the `oc get` command in the previous step.
+
 +
 ----
-apiVersion: v1
+        apiVersion: v1
         kind: Route
         metadata:
         name: <YOUR KNATIVE SERVICE NAME>
