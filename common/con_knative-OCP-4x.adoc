@@ -14,8 +14,12 @@ You will need cluster administrator privileges to install and use Knative on an 
 
 === Supported platform version
 
+IMPORTANT: Installation requires the OpenShift version `0.14.0` installer or later. Using the link:https://github.com/openshift/installer/releases[latest version installer] is recommended.  
+
 [cols="50,50"]
 |===
 |** Platform**     | **Supported versions**   
 | OpenShift    | 4.0 Developer Preview
 |===
+
+NOTE: Long-running clusters are not supported in this release.
