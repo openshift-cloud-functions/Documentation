@@ -22,4 +22,4 @@ IMPORTANT: Installation requires the OpenShift version `0.14.0` installer or lat
 | OpenShift    | 4.0 Developer Preview
 |===
 
-NOTE: Long-running clusters will fail due to a broken Maistra sidecar injection.
+NOTE: Long-running clusters are not supported in this release.
