@@ -57,19 +57,6 @@
 ## Post-installation tasks
 
 ### Allowing external access to Knative services for OCP 4.0
-
-#### Updating Knative's config-domain ConfigMap and replacing "example.com" with your domain's suffix.
-
->**NOTE**: This will not be needed once the new operator capabilities are enabled to set the value automatically.
-
-1. Find out your cluster's domain suffix <YOUR CLUSTER SUFFIX> with the following command:
-
-   `oc get ingresses.config.openshift.io cluster -o jsonpath="{.spec.domain}"`
-   
-2. Edit Knative's config-domain ConfigMap and replace "example.com" with <YOUR CLUSTER SUFFIX> by using the following command:
-
-   `oc edit configmap config-domain -n knative-serving`
-   
    
 #### Creating an OpenShift Route pointing to the istio-ingressgateway for each of your Knative Service. 
 

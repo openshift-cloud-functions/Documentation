@@ -1,6 +1,6 @@
 // This module is included in the following assemblies:
 //
-// assembly_allowing-external-access-knative-services-OCP-4x.adoc
+// assembly_knative-OCP-4x.adoc
 
 
 [id='creating-OCP-route-pointing-istio_{context}']
