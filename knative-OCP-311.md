@@ -86,7 +86,7 @@ Your Knative services will not be accessible from outside of the OpenShift clust
         kind: Service
         name: knative-ingressgateway
         weight: 100
-        wildcardPolicy: Subdomain   
+      wildcardPolicy: Subdomain   
 
   Apply the yaml file.
 
