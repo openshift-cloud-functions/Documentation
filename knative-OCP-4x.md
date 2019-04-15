@@ -60,24 +60,20 @@
    
 #### Creating an OpenShift Route pointing to the istio-ingressgateway for each of your Knative Service. 
 
-1. Create a yaml file, "my-route.yaml" with the following content:  
- * Replace <YOUR KNATIVE SERVICE NAME> with your knative service name; 
- * Replace <YOUR NAMESPACE> with your service's namespace;
- * Replace <YOUR CLUSTER SUFFIX> with the value output by the `oc get` command in the previous step.
+1. Create a route by using the `oc expose` command.
 
-         apiVersion: v1
-          kind: Route
-          metadata:
-            name: <YOUR KNATIVE SERVICE NAME>
-            namespace: istio-system
-          spec:
-            host: <YOUR KNATIVE SERVICE NAME>.<YOUR NAMESPACE>.<YOUR CLUSTER SUFFIX>
-            to:
-              kind: Service
-              name: istio-ingressgateway
+```
+oc expose svc istio-ingressgateway --hostname=<servicename>.<projectname>.<openshiftdomain> --name=<servicename> -n istio-system`
+```
 
-2. Run the following yaml file command:
+For example, if the following inputs are used:
+* knative service name: *helloworld*
+* project: *my project*
+* cluster wildcard domain: *apps.demo1.d103.sandbox718.opentlc.com*
+    
+the `oc command` would be:
 
-   `oc apply -f my-route.yaml` 
-   
->**NOTE**: If you previously deployed your Knative Services, you will need to redeploy them for the changes to the domain ConfgMap to take effect.
+ ```
+ oc expose svc istio-ingressgateway --hostname=helloworld.myproject.apps.demo1.d103.sandbox718.opentlc.com --name=helloworld -n istio-system
+```
+
