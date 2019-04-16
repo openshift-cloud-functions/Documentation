@@ -13,7 +13,7 @@
 
 > **NOTE:** This Knative on OpenShift preview is only available by using the OpenShift 4.0 developer preview. You will require a Red Hat Developers login to try this. Visit [try.openshift.com](https://try.openshift.com/) for getting started information.
 
-> **IMPORTANT:** Installation requires the OpenShift version `0.14.0` installer or later. Using the [latest version installer](https://github.com/openshift/installer/releases) is recommended.  
+> **IMPORTANT:** Installation requires the OpenShift version `0.16.1` installer or later. Using the [latest version installer](https://github.com/openshift/installer/releases) is recommended.  
 
 | Platform        | Supported versions           |
 | ------------- |:-------------:|
@@ -39,7 +39,7 @@
 
    `./etc/scripts/install.sh`  
 
->**NOTE:** The `install.sh` script can time-out waiting for an Istio operator and you may recieve a `ERROR: Timed out` message. If the `install.sh` script fails to install Istio, run the script again after it times out.
+>**NOTE:** The `install.sh` script can time-out waiting for the Istio operator to complete, and you may receive an `ERROR: Timed out` message. If the `install.sh` script fails to install Istio, run the script again after it times out.
 
 4. Once the script starts, you will see the following warning and prompt.
 
