@@ -3,6 +3,8 @@
 
 > **IMPORTANT:** The functionality introduced by Knative on an OpenShift cluster is preview only. Red Hat support is not provided, and this release should not be used in a production environment.
 
+> **NOTE:** This release includes upstream Knative Eventing `v0.4.1` and Knative Serving `v0.4.1`.
+
 ## Prerequisites
 
 > **IMPORTANT:** You will need cluster administrator privileges to install and use Knative on an OpenShift cluster.
