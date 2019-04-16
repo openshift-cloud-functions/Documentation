@@ -15,7 +15,7 @@
 
 | Platform        | Supported versions           |
 | ------------- |:-------------:|
-| OpenShift      | [4.0 Developer Preview](https://try.openshift.com/)		|
+| OpenShift      | [4.0 Developer Preview](https://try.openshift.com/)          |
 
 > **NOTE:**  Long-running clusters are not supported in this release.
 
@@ -30,7 +30,7 @@
    `git clone https://github.com/openshift-cloud-functions/knative-operators`   
    `cd knative-operators/`   
    `git fetch --tags`   
-   `git checkout openshift-v0.3.0`   
+   `git checkout openshift-v0.4.0`   
 
 
 3. Navigate to the newly cloned repository and run the `install.sh` script.
@@ -44,8 +44,6 @@
    `WARNING: This script will attempt to install Istio, Knative, and OLM in your Kubernetes/OpenShift cluster.`
     
     `If targeting OpenShift, a recent version of 'oc' should be available in your PATH. Otherwise, 'kubectl' will be used.`
-
-    `If using OpenShift 3.11 and your cluster isn't minishift, ensure \$KUBE_SSH_KEY and \$KUBE_SSH_USER are set`
 
     `Pass -q to disable this prompt`
  

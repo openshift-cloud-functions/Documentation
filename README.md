@@ -4,7 +4,7 @@
 * [Github pages view - WIP](https://openshift-cloud-functions.github.io/Documentation/)
 * [Serverless: Arotna/Siteless rendering - WIP](https://joaedwar.github.io/Documentation/)
 
-## Knative on OpenShift v0.3.0
+## Knative on OpenShift v0.4.0
 [Knative on an OpenShift 4.0 cluster](/knative-OCP-4x.md)
 
 ## Knative on OpenShift v0.2.0
