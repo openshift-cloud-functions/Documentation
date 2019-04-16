@@ -39,7 +39,7 @@
 
    `./etc/scripts/install.sh`  
 
->**NOTE** The installation script takes around 20-30 minutes to complete, depending on your system.
+>**NOTE:** The `install.sh` script can time-out waiting for an Istio operator and you may recieve a `ERROR: Timed out` message. If the `install.sh` script fails to install Istio, run the script again after it times out.
 
 4. Once the script starts, you will see the following warning and prompt.
 
