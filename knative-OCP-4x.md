@@ -29,11 +29,12 @@
    
 2. Clone the `knative-operators` repository.
 
-   `git clone https://github.com/openshift-cloud-functions/knative-operators`   
-   `cd knative-operators/`   
-   `git fetch --tags`   
-   `git checkout openshift-v0.4.0`   
-
+```
+   git clone https://github.com/openshift-cloud-functions/knative-operators
+   cd knative-operators/
+   git fetch --tags  
+   git checkout openshift-v0.4.0      
+```
 
 3. Navigate to the newly cloned repository and run the `install.sh` script.
 
@@ -43,13 +44,16 @@
 
 4. Once the script starts, you will see the following warning and prompt.
 
-   `WARNING: This script will attempt to install Istio, Knative, and OLM in your Kubernetes/OpenShift cluster.`
+```
+   WARNING: This script will attempt to install Istio, Knative, and OLM in your Kubernetes/OpenShift cluster.
     
-    `If targeting OpenShift, a recent version of 'oc' should be available in your PATH. Otherwise, 'kubectl' will be used.`
+   If targeting OpenShift, a recent version of 'oc' should be available in your PATH. Otherwise, 'kubectl' will be used.
 
-    `Pass -q to disable this prompt`
+   Pass -q to disable this prompt
  
-    `Enter to continue or Ctrl-C to exit:`
+   Enter to continue or Ctrl-C to exit:
+
+```
 
 5. Press Enter to continue.
 
