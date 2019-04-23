@@ -4,7 +4,7 @@ runtime:
 site:
   title: OpenShift Cloud Functions (OCF)
   url: https://openshift-cloud-functions.github.io/Documentation/
-  start_page: v0.5.0-SNAPSHOT@OCF::index.adoc
+  start_page: ROOT:index.adoc
 
 content:
   sources:
