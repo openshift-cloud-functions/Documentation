@@ -28,7 +28,7 @@ Developer Preview
    git fetch --tags   
    git checkout openshift-v0.2.0   
 ```
-3. Set the following SSH properties using your OpenShift cluster credentials.
+3. Set the following SSH properties using your OpenShift cluster credentials:
 
    `export KUBE_SSH_USER=<username>`   
    `export KUBE_SSH_KEY=<path-to-private-ssh-key>`   
@@ -39,7 +39,7 @@ Developer Preview
 
 >**NOTE** The installation script takes around 20-30 minutes to complete, depending on your system.
 
-5. Once the script starts, you will see the following warning and prompt.
+5. Once the script starts, you will see the following warning and prompt:
 
 ```
   WARNING: This script will blindly attempt to install OLM, Istio, and Knative on your OpenShift cluster, so if any are already there, hijinks may ensue.
@@ -68,6 +68,7 @@ Your Knative services will not be accessible from outside of the OpenShift clust
    `oc edit configmap config-domain -n knative-serving`   
 
 3. Replace the default "example.com" with your default routing subdomain.
+
 4. Configure your router to allow wildcard domains.
 
    `oc set env dc/router ROUTER_ALLOW_WILDCARD_ROUTES=true -n default`   
@@ -75,7 +76,7 @@ Your Knative services will not be accessible from outside of the OpenShift clust
 5. Create a route that forwards wildcard traffic to the `knative-ingressgateway`.
    > **NOTE:** This route requires one host per namespace that is running Knative services. The format for the host of the route is `wildcard.<namespace>.<default-routing-subdomain>`.
 
-  To do this, you must create a wildcard yaml file (in our example this is named `wildcard-routes.yml`) with the following content:
+To do this, you must create a wildcard yaml file (in our example this is named `wildcard-routes.yml`) with the following content:
 
     apiVersion: route.openshift.io/v1
     kind: Route
