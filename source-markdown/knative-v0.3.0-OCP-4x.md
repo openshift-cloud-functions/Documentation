@@ -23,12 +23,14 @@
    
 2. Clone the `knative-operators` repository.
 
-```
-   git clone https://github.com/openshift-cloud-functions/knative-operators   
-   cd knative-operators/ 
-   git fetch --tags   
-   git checkout openshift-v0.3.0   
-```
+  `git clone https://github.com/openshift-cloud-functions/knative-operators`
+   
+   `cd knative-operators/` 
+   
+   `git fetch --tags`   
+   
+   `git checkout openshift-v0.3.0`   
+
 
 3. Navigate to the newly cloned repository and run the `install.sh` script.
 
