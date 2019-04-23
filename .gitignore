@@ -1,4 +1,4 @@
-theme: jekyll-theme-dinky*.iml
+*.iml
 .idea
 target/
 build/
