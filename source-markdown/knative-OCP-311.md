@@ -76,8 +76,8 @@ Your Knative services will not be accessible from outside of the OpenShift clust
 5. Create a route that forwards wildcard traffic to the `knative-ingressgateway`.
    > **NOTE:** This route requires one host per namespace that is running Knative services. The format for the host of the route is `wildcard.<namespace>.<default-routing-subdomain>`.
 
-To do this, you must create a wildcard yaml file (in our example this is named `wildcard-routes.yml`) with the following content:
-
+   To do this, you must create a wildcard yaml file (in our example this is named `wildcard-routes.yml`) with the following    content:
+```
     apiVersion: route.openshift.io/v1
     kind: Route
     metadata:
@@ -91,21 +91,21 @@ To do this, you must create a wildcard yaml file (in our example this is named `
         kind: Service
         name: knative-ingressgateway
         weight: 100
-        wildcardPolicy: Subdomain   
+        wildcardPolicy: Subdomain  
+```
+6. Apply the yaml file.
+   
+    `oc apply -f wildcard-routes.yml`   
 
-  Apply the yaml file.
-
-   `oc apply -f wildcard-routes.yml`   
-
-6. Clone the demo repository.
+7. Clone the demo repository.
 
    `git clone https://github.com/openshift-cloud-functions/demos.git`
 
-7. Deploy the demo application.
+8. Deploy the demo application.
 
    `oc apply -f ~/demos/knative-kubecon/serving/010-service.yaml`   
 
-8. View the domain that was assigned to the application. You can now access the demo application using this domain.
+9. View the domain that was assigned to the application. You can now access the demo application using this domain.
 
    `oc get service.serving.knative.dev/dumpy`   
 
