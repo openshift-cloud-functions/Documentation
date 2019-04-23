@@ -22,11 +22,12 @@ Developer Preview
    
 2. Clone the `knative-operators` repository.
 
-   `git clone https://github.com/openshift-cloud-functions/knative-operators`   
-   `cd knative-operators/`   
-   `git fetch --tags`   
-   `git checkout openshift-v0.2.0`   
-
+```
+   git clone https://github.com/openshift-cloud-functions/knative-operators  
+   cd knative-operators/   
+   git fetch --tags   
+   git checkout openshift-v0.2.0   
+```
 3. Set the following SSH properties using your OpenShift cluster credentials.
 
    `export KUBE_SSH_USER=<username>`   
@@ -40,13 +41,16 @@ Developer Preview
 
 5. Once the script starts, you will see the following warning and prompt.
 
-   `WARNING: This script will blindly attempt to install OLM, istio, and knative on your OpenShift cluster, so if   any are already there, hijinks may ensue.`
+```
+  WARNING: This script will blindly attempt to install OLM, Istio, and Knative on your OpenShift cluster, so if any are already there, hijinks may ensue.
 
-   `If your cluster isn't minishift, ensure $KUBE_SSH_KEY and $KUBE_SSH_USER are set`   
+  If your cluster isn't minishift, ensure $KUBE_SSH_KEY and $KUBE_SSH_USER are set  
 
-   `Pass -q to disable this warning`   
+  Pass -q to disable this warning   
 
-   `Enter to continue or Ctrl-C to exit:`   
+  Enter to continue or Ctrl-C to exit:
+
+```
 
 6. Press Enter to continue.
    
