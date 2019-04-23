@@ -6,7 +6,7 @@
 [id='knative-ocp-311_{context}']
 = Knative on an OpenShift cluster
 
-NOTE: The functionality introduced by Knative on an OpenShift cluster is developer preview only. Red Hat support is not provided, and this release should not be used in a production environment.
+NOTE: The functionality introduced by Knative on an OpenShift cluster is developer preview only. Red Hat support is not provided. This release should not be used in a production environment.
 
 The script installation method is recommended.
 
