@@ -13,10 +13,14 @@ content:
       branches: master
       
 asciidoc:
-  attributes:
-    tutorial-namespace: Serverless
   extensions:
-    - ./lib/copy-to-clipboard.js
+  - ./lib/tab-block.js
+  attributes:
+    experimental: ''
+    idprefix: ''
+    idseparator: '-'
+    linkattrs: ''
+    
 ui:
   bundle:
     url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/master/raw/build/ui-bundle.zip?job=bundle-stable
