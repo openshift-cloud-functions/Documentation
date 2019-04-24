@@ -4,15 +4,14 @@ runtime:
 site:
   title: OpenShift Cloud Functions (OCF)
   url: https://openshift-cloud-functions.github.io/Documentation/
-  start_page: openshift-cloud-functions::index.adoc
+  start_page: openshift-cloud-functions::index
 
 content:
   sources:
-    - url: https://github.com/openshift-cloud-functions/Documentation/tree/master/documentation
+    - url: https://github.com/openshift-cloud-functions/Documentation.git
       tags: v*
       branches: master
-      start_path: documentation
-
+      
 asciidoc:
   attributes:
     tutorial-namespace: Serverless
