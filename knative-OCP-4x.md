@@ -13,7 +13,7 @@
 
 > **NOTE:** This Knative on OpenShift preview is only available by using the OpenShift 4.0 developer preview. You will require a Red Hat Developers login to try this. Visit [try.openshift.com](https://try.openshift.com/) for getting started information.
 
-> **IMPORTANT:** Installation requires the OpenShift version `0.16.1` installer or later. Using the [latest version installer](https://github.com/openshift/installer/releases) is recommended.  
+> **IMPORTANT:** Installation requires the OpenShift version `0.16.1` installer or later. Using the [latest version installer](https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/) is recommended.  
 
 | Platform        | Supported versions           |
 | ------------- |:-------------:|
