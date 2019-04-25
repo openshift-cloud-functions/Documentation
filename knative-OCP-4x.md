@@ -3,7 +3,7 @@
 
 > **IMPORTANT:** The functionality introduced by Knative on an OpenShift cluster is preview only. Red Hat support is not provided, and this release should not be used in a production environment.
 
-> **NOTE:** This release includes upstream Knative Eventing `v0.4.1` and Knative Serving `v0.4.1`.
+> **NOTE:** This release includes upstream Knative Serving `v0.5.1`, Knative Eventing `v0.5.0` and Knative Build `v0.5.0`.
 
 ## Prerequisites
 
@@ -33,7 +33,7 @@
    git clone https://github.com/openshift-cloud-functions/knative-operators
    cd knative-operators/
    git fetch --tags  
-   git checkout openshift-v0.4.0      
+   git checkout openshift-v0.5.0
 ```
 
 3. Navigate to the newly cloned repository and run the `install.sh` script.
