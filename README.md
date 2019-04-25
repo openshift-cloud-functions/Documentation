@@ -7,7 +7,7 @@
 
 
 ## Knative on OpenShift v0.5.0
-[Knative on an OpenShift 5.0 cluster](knative-v0.5.0-OCP-4x.md)
+[Knative on an OpenShift 4.0 cluster](knative-v0.5.0-OCP-4x.md)
 
 ## Knative on OpenShift v0.4.0
 [Knative on an OpenShift 4.0 cluster](knative-OCP-4x.md)
