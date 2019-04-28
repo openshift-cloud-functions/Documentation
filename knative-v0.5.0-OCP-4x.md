@@ -64,7 +64,7 @@
    
 #### Creating an OpenShift Route pointing to the istio-ingressgateway for each of your Knative Service. 
 
->**NOTE:** The install script sets privileges for a specific namespace. If the user wants to use it in another namespace, it needs to be called out.
+>**NOTE:** The install script sets privileges for a specific namespace.Results are different when using namespace other than "myproject". If the user wants to use it in another namespace, it needs to be called out.
 
 1. Create a route by using the `oc expose` command.
 
