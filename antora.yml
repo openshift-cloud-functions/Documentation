@@ -1,6 +1,6 @@
 name: ocf-docs
 title: OpenShift Cloud Functions (OCF)
-version: 'latest'
+version: master
 nav:
   - modules/ROOT/nav.adoc
 
