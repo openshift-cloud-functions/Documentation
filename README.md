@@ -1,8 +1,10 @@
 # Knative on OpenShift documentation
 
+Knative on OpenShift has moved to a [new location](https://github.com/openshift-knative/docs)
+
 
 ## Knative on OpenShift v0.5.0
-Documentation has moved to [here](https://github.com/openshift-knative/docs)
+Documentation has moved to [here](https://github.com/openshift-knative/docs/blob/master/versions/v050/knative-v050-OCP-4x.md)
 
 ## Knative on OpenShift v0.4.0
 [Knative on an OpenShift 4.0 cluster](knative-OCP-4x.md)
